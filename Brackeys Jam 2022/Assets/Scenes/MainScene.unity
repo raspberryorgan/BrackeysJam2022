@@ -612,8 +612,8 @@ GameObject:
   m_Component:
   - component: {fileID: 912352062}
   - component: {fileID: 912352061}
-  - component: {fileID: 912352060}
   - component: {fileID: 912352063}
+  - component: {fileID: 912352060}
   m_Layer: 7
   m_Name: NPC 2
   m_TagString: Untagged
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 912352059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1013d3c8efea401478e1c08be247b378, type: 3}
+  m_Script: {fileID: 11500000, guid: be1ae19093abd334086c2f0b7bb7e4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &912352061
@@ -1149,8 +1149,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1992461191}
   - component: {fileID: 1992461190}
-  - component: {fileID: 1992461189}
   - component: {fileID: 1992461192}
+  - component: {fileID: 1992461189}
   m_Layer: 7
   m_Name: NPC 1
   m_TagString: Untagged
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1992461188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1013d3c8efea401478e1c08be247b378, type: 3}
+  m_Script: {fileID: 11500000, guid: be1ae19093abd334086c2f0b7bb7e4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &1992461190
