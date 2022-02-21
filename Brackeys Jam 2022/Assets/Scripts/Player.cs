@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     Vector3 lastDir;
     public Transform interactPos;
     public LayerMask interactableMask;
+    public GameObject inventory;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +26,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             TryInteract();
+        }
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            inventory.SetActive(!inventory.activeSelf);
         }
     }
 

@@ -17,7 +17,7 @@ MonoBehaviour:
   - text: Aaaaaaaaaaaa
     memory: {fileID: 0}
   - text: Bbbbbbbbbbbbbbbbbbbb
-    memory: {fileID: 7867855359545222625, guid: 94a56847a0e1f8a45baff9f1085bd276, type: 3}
+    memory: {fileID: 2484706400260382076, guid: 410ddb1f11dbb484a8ec5d791ef95397, type: 3}
   - text: Ccccccccccccccccccccc
     memory: {fileID: 0}
   wasTalked: 1

@@ -17,7 +17,8 @@ public class MemorySlot : MonoBehaviour, IDropHandler
         if (aux!= null)
         {
             aux.SetParent(transform);
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+            aux.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+            
         }
     }
 }

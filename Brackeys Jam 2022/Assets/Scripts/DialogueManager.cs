@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
 	private DraggableMemory memory;
 	public GameObject dialogueCanvas;
 
+	public Canvas canvas;
 
 	// Use this for initialization
 	void Start()
@@ -52,13 +53,14 @@ public class DialogueManager : MonoBehaviour
 		StartCoroutine(TypeSentence(sentence.text));
 		if (memory)
 		{
-			Destroy(memory.gameObject);
+			//Destroy(memory.gameObject);
 
 		}
 		if (sentence.memory)
-        {
-			
+        {			
 			memory = Instantiate(sentence.memory).GetComponent<DraggableMemory>();
+			memory.SetParent(canvas.transform, false);
+			memory.SetCanvas(canvas);			
         }
 	}
 
