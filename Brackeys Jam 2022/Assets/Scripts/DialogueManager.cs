@@ -12,7 +12,8 @@ public class DialogueManager : MonoBehaviour
 	public Animator animator;
 
 	private Queue<Sentence> sentences;
-	private GameObject memory;
+	private DraggableMemory memory;
+	public GameObject dialogueCanvas;
 
 
 	// Use this for initialization
@@ -25,6 +26,7 @@ public class DialogueManager : MonoBehaviour
 	{
 		//animator.SetBool("IsOpen", true);
 		Debug.Log("Starting new Dialogue");
+		dialogueCanvas.SetActive(true);
 		nameText.text = dialogue.name;
 
 		sentences.Clear();
@@ -56,7 +58,7 @@ public class DialogueManager : MonoBehaviour
 		if (sentence.memory)
         {
 			
-			memory = Instantiate(sentence.memory);
+			memory = Instantiate(sentence.memory).GetComponent<DraggableMemory>();
         }
 	}
 
@@ -73,6 +75,8 @@ public class DialogueManager : MonoBehaviour
 	void EndDialogue()
 	{
 		//animator.SetBool("IsOpen", false);
+		Debug.Log("End Dialogue.");
+		dialogueCanvas.SetActive(false);
 	}
 
 }
