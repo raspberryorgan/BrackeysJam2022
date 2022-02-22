@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
@@ -13,6 +14,14 @@ public class Player : MonoBehaviour
     public Transform interactPos;
     public LayerMask interactableMask;
     public GameObject inventory;
+
+    Action onOpenInventory = () => { };
+    Action onCloseInventory = () => { };
+
+    public void AddOnOpenInventory(Action callback) { onOpenInventory += callback; }
+    public void RemoveOnOpenInventory(Action callback) { onOpenInventory -= callback; }
+    public void AddOnCloseInventory(Action callback) { onCloseInventory += callback; }
+    public void RemoveOnCloseInventory(Action callback) { onCloseInventory -= callback; }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,12 +36,20 @@ public class Player : MonoBehaviour
         {
             TryInteract();
         }
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            inventory.SetActive(!inventory.activeSelf);
+            InventoryChange();
         }
     }
 
+
+    void InventoryChange()
+    {
+        if (inventory.activeSelf) onCloseInventory();
+        else
+            onOpenInventory();
+        inventory.SetActive(!inventory.activeSelf);
+    }
     void TryInteract()
     {
         var aux = Physics2D.CircleCast(interactPos.position, .2f, Vector2.zero, interactableMask);

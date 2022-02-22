@@ -10,27 +10,42 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
     CanvasGroup canvasGroup;
 
     Transform lastParent;
+    public RealMemory realMemory;
+    [HideInInspector]
+    public MouseChecker checker;
 
+    void Awake()
+    {
+        checker = FindObjectOfType<MouseChecker>();//TODO: CAMBIARLO A ASIGNAR CUANDO SE INSTANCIA TODO
+
+    }
+    void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
+        realMemory.draggableMemory = this;
+        checker.AddOnMouseEnter(OnInventoryEnter);
+        checker.AddOnMouseExit(OnInventoryExit);
+    }
+    public void SetMemory(RealMemory _memory)
+    {
+        realMemory = _memory;
+    }
     public void SetParent(Transform par, bool wPosStays = true)
     {
         lastParent = par;
-        transform.SetParent( par,wPosStays );
+        transform.SetParent(par, wPosStays);
     }
     public void SetCanvas(Canvas can)
     {
         canvas = can;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
-    }
-
+    #region DragThings
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
+        realMemory.SetState(MemoryState.Off);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -41,11 +56,26 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
+        if(lastParent != null && lastParent.GetComponent<MemorySlot>()!= null)
+        {
+            rectTransform.anchoredPosition = Vector2.zero;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("POINTER DOWN");
+
+    }
+    #endregion
+
+    void OnInventoryEnter()
+    {
+        gameObject.SetActive(true);
+    }
+
+    void OnInventoryExit()
+    {
+        gameObject.SetActive(false);
     }
 }
 

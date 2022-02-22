@@ -13,12 +13,12 @@ public class MemorySlot : MonoBehaviour, IDropHandler
     }
     public void OnDrop(PointerEventData eventData)
     {
+        if (GetComponentInChildren<DraggableMemory>()) return;
+
         var aux = eventData.pointerDrag.GetComponent<DraggableMemory>();
         if (aux!= null)
         {
-            aux.SetParent(transform);
-            aux.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
-            
+            aux.SetParent(transform);            
         }
     }
 }
