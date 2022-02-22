@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class RealMemory : MonoBehaviour
+public class RealMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     public DraggableMemory draggableMemory;
     Camera cam;
@@ -11,7 +12,7 @@ public class RealMemory : MonoBehaviour
     [HideInInspector]
     public MouseChecker checker;
 
-    MemoryState state;
+    public MemoryState state { get; private set; } 
 
     private void Awake()
     {
@@ -25,12 +26,16 @@ public class RealMemory : MonoBehaviour
     }
     void Start()
     {
-        gameObject.SetActive(false);
-        state = MemoryState.Off;
+        //gameObject.SetActive(false);
         checker.AddOnMouseEnter(OnInventoryEnter);
-        checker.AddOnMouseExit(OnInventoryExit);      
+        checker.AddOnMouseExit(OnInventoryExit);
+        state = MemoryState.Placed;
+        checker.ADDONUPDATE(debugger);
     }
-
+    void debugger()
+    {
+        Debug.Log("REAL: " + state);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -42,6 +47,7 @@ public class RealMemory : MonoBehaviour
             if (targetObject == GetComponent<Collider2D>())
             {
                 state = MemoryState.Selected;
+                draggableMemory.state = DragState.Selected;
             }
         }
         if (Input.GetMouseButtonUp(0) && state == MemoryState.Selected)
@@ -54,32 +60,23 @@ public class RealMemory : MonoBehaviour
             transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
             //targetObject.transform.position += new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0); 
 
-            draggableMemory.transform.position = cam.WorldToScreenPoint(transform.position);
+            //draggableMemory.transform.position = cam.WorldToScreenPoint(transform.position);
             //Vector3 newPos = cam.ScreenToWorldPoint(draggableMemory.transform.position);
             //newPos.z = transform.position.z;
             //transform.position = newPos;
         }
-
-        Debug.Log(state);   
     }
-    void Debugger()
-    {
-
-        Debug.Log(state);
-    }
-
     void OnInventoryEnter()
     {
         if (state == MemoryState.Selected)
         {
-            state = MemoryState.Off;
             gameObject.SetActive(false);
         }
     }
 
     void OnInventoryExit()
     {
-        if (state == MemoryState.Off)
+        if (draggableMemory.state == DragState.Selected)
         {
             gameObject.SetActive(true);
             state = MemoryState.Selected;
@@ -107,13 +104,21 @@ public class RealMemory : MonoBehaviour
     {
         state = _state;
     }
+      
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+    }
+
+    void IBeginDragHandler.OnBeginDrag(PointerEventData eventData) { }
+    public void OnEndDrag(PointerEventData eventData) { }
+    public void OnDrag(PointerEventData eventData) { }
 }
 
 public enum MemoryState
 {
     Placed,
     PlacedInEditMode,
-    Selected,
-    Off
+    Selected
 
 }

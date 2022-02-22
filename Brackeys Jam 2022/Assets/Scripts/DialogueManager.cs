@@ -24,7 +24,6 @@ public class DialogueManager : MonoBehaviour
 	{
 		sentences = new Queue<Sentence>();
 		player = FindObjectOfType<Player>();
-		Debug.Log(player);
 	}
 
 	public void StartDialogue(Dialogue dialogue)

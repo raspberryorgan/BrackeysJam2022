@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   sentences:
-  - text: agdfgs
+  - text: dialogo 3.0
     memory: {fileID: 0}
   - text: gbvbhtr
     memory: {fileID: 0}

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class MemorySlot : MonoBehaviour, IDropHandler
 {
     Camera cam;
+    RealMemory selectedMem;
 
     private void Start()
     {
@@ -13,12 +14,17 @@ public class MemorySlot : MonoBehaviour, IDropHandler
     }
     public void OnDrop(PointerEventData eventData)
     {
-        if (GetComponentInChildren<DraggableMemory>()) return;
+        Debug.Log("DROPS");
 
         var aux = eventData.pointerDrag.GetComponent<DraggableMemory>();
-        if (aux!= null)
+        if (aux != null && aux.state == DragState.Selected)
         {
-            aux.SetParent(transform);            
+            Debug.Log("LLEGUE ACA 2222");
+            aux.SetParent(transform);
+            aux.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
         }
     }
+
+
+
 }

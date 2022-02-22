@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   sentences:
-  - text: Aaaaaaaaaaaa
+  - text: 'dialogo 1.0
+
+'
     memory: {fileID: 0}
-  - text: Bbbbbbbbbbbbbbbbbbbb
+  - text: dialogo 1.1
     memory: {fileID: 2484706400260382076, guid: 410ddb1f11dbb484a8ec5d791ef95397, type: 3}
-  - text: Ccccccccccccccccccccc
+  - text: dialogo 1.2
     memory: {fileID: 0}
   wasTalked: 1

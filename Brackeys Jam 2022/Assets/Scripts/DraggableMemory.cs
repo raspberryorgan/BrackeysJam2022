@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -13,6 +14,8 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
     public RealMemory realMemory;
     [HideInInspector]
     public MouseChecker checker;
+
+    public DragState state;
 
     void Awake()
     {
@@ -26,6 +29,9 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
         realMemory.draggableMemory = this;
         checker.AddOnMouseEnter(OnInventoryEnter);
         checker.AddOnMouseExit(OnInventoryExit);
+        checker.ADDONUPDATE(debugger);
+        state = DragState.OnInventory;
+        gameObject.SetActive(false); 
     }
     public void SetMemory(RealMemory _memory)
     {
@@ -41,42 +47,77 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
         canvas = can;
     }
 
-    #region DragThings
-    public void OnBeginDrag(PointerEventData eventData)
+    void Update()
     {
-        canvasGroup.blocksRaycasts = false;
-        realMemory.SetState(MemoryState.Off);
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        canvasGroup.blocksRaycasts = true;
-        if(lastParent != null && lastParent.GetComponent<MemorySlot>()!= null)
+        if (state == DragState.Selected)
         {
-            rectTransform.anchoredPosition = Vector2.zero;
+            transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z);
+        }
+
+        if (Input.GetMouseButtonUp(0) && state == DragState.Selected)
+        {
+
+            //PointerEventData ped = new PointerEventData(null);
+            //ped.position = Input.mousePosition;
+            //List<RaycastResult> results = new List<RaycastResult>();
+            //gr.Raycast(ped, results);
+            //Debug.Log(results.Count);
+
+            canvasGroup.blocksRaycasts = true;
+            if (lastParent != null && lastParent.GetComponent<MemorySlot>() != null)
+            {
+                rectTransform.anchoredPosition = Vector2.zero;
+            }
+            if (state == DragState.Selected)
+                state = DragState.OnInventory;
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
+        if (state == DragState.OnInventory)
+        {
+            canvasGroup.blocksRaycasts = false;
+            realMemory.SetState(MemoryState.Selected);
+            state = DragState.Selected;
+        }
     }
-    #endregion
+
+    void debugger()
+    {
+        Debug.Log("DRAGGABLE: "+state);
+    }
+  
 
     void OnInventoryEnter()
     {
-        gameObject.SetActive(true);
+        if (realMemory.state == MemoryState.Selected && state == DragState.Selected)
+        {
+            Vector3 aux = Camera.main.WorldToScreenPoint( realMemory.transform.position);
+            transform.position = new Vector3(aux.x, aux.y, transform.position.z);
+            gameObject.SetActive(true);
+            state = DragState.Selected;
+            canvasGroup.blocksRaycasts = false;
+        }
     }
 
     void OnInventoryExit()
     {
-        gameObject.SetActive(false);
+        if (state == DragState.Selected )
+        {
+            gameObject.SetActive(false);
+        }
     }
+
+    public void OnDrag(PointerEventData eventData) { }
+    public void OnBeginDrag(PointerEventData eventData) { }
+    void IEndDragHandler.OnEndDrag(PointerEventData eventData) { }
+}
+
+public enum DragState
+{
+    OnInventory,
+    Selected
 }
 
 

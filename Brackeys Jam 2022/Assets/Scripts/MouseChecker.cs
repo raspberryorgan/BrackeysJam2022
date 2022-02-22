@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
-public class MouseChecker : MonoBehaviour, IDragHandler
+public class MouseChecker : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     Action onMouseEnter = () => { };
     Action onMouseExit = () => { };
+    Action ONUPDATE = () => { };
 
     bool isOverGo;
+    public void ADDONUPDATE(Action callback) { ONUPDATE += callback; }
     public void AddOnMouseEnter( Action callback) { onMouseEnter += callback; }
     public void AddOnMouseExit(Action callback) { onMouseExit += callback; }
 
@@ -19,20 +21,23 @@ public class MouseChecker : MonoBehaviour, IDragHandler
     }
     void Update()
     {
+        //ONUPDATE();
         if (!isOverGo && EventSystem.current.IsPointerOverGameObject())
         {
-            isOverGo = true;
-            onMouseEnter();
         }else if( isOverGo && !EventSystem.current.IsPointerOverGameObject())
         {
-            isOverGo = false;
-            onMouseExit();
         }
-
     }
-    public void OnDrag(PointerEventData eventData)
-    {
-        //if(eventData.)
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        isOverGo = true;
+        onMouseEnter();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isOverGo = false;
+        onMouseExit();
     }
 }
