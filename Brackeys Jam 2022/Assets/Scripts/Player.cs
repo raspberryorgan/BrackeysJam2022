@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float speed;
     public Camera cam;
     Rigidbody2D rb;
+    public bool isBusy;
 
     Vector3 lastDir;
     public Transform interactPos;
@@ -29,8 +30,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (isBusy) return;
         Move();
         InteractPos();
+
 
         if (Input.GetKeyDown(KeyCode.E))
         {

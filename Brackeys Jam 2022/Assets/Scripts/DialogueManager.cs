@@ -17,10 +17,14 @@ public class DialogueManager : MonoBehaviour
 
 	public Canvas canvas;
 
+	private Player player;
+
 	// Use this for initialization
 	void Start()
 	{
 		sentences = new Queue<Sentence>();
+		player = FindObjectOfType<Player>();
+		Debug.Log(player);
 	}
 
 	public void StartDialogue(Dialogue dialogue)
@@ -36,7 +40,7 @@ public class DialogueManager : MonoBehaviour
 		{
 			sentences.Enqueue(sentence);
 		}
-
+		player.isBusy = true;
 		DisplayNextSentence();
 	}
 
@@ -79,6 +83,7 @@ public class DialogueManager : MonoBehaviour
 		//animator.SetBool("IsOpen", false);
 		Debug.Log("End Dialogue.");
 		dialogueCanvas.SetActive(false);
+		player.isBusy = false;
 	}
 
 }
