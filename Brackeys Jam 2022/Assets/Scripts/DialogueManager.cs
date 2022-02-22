@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
 		//animator.SetBool("IsOpen", true);
 		Debug.Log("Starting new Dialogue");
 		dialogueCanvas.SetActive(true);
-		nameText.text = dialogue.name;
+		nameText.text = dialogue.npcName;
 
 		sentences.Clear();
 

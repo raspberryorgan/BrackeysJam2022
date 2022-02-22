@@ -8,13 +8,21 @@ public class Mission
     public MissionType type;
     public Dialogue[] dialogues = new Dialogue[4];
     public GameObject award;
-    public bool started;
-    public bool complete;
+    public MissionStates state = MissionStates.NotActivated;
+    public int currentAmount;
+    public int requiredAmount;
     public virtual void Init()
     {
         foreach (Dialogue d in dialogues)
         {
             d.wasTalked = false;
+        }
+    }
+    public void Evaluate()
+    {
+        if (currentAmount >= requiredAmount)
+        {
+            state = MissionStates.Completed;
         }
     }
 }
@@ -23,4 +31,11 @@ public enum MissionType
     KillEnemies,
     Collect
 
+}
+public enum MissionStates
+{
+    NotActivated,
+    InProgress,
+    Completed,
+    Claimed
 }

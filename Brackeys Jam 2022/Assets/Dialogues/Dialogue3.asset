@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
-  m_Name: DialogueExample
+  m_Name: Dialogue3
   m_EditorClassIdentifier: 
   npcName: 
   sentences:
-  - text: Aaaaaaaaaaaa
+  - text: agdfgs
     memory: {fileID: 0}
-  - text: Bbbbbbbbbbbbbbbbbbbb
-    memory: {fileID: 2484706400260382076, guid: 410ddb1f11dbb484a8ec5d791ef95397, type: 3}
-  - text: Ccccccccccccccccccccc
+  - text: gbvbhtr
     memory: {fileID: 0}
-  wasTalked: 1
+  - text: fgjhtyuetuetyu
+    memory: {fileID: 0}
+  - text: rwrwerdfcvb
+    memory: {fileID: 0}
+  wasTalked: 0
