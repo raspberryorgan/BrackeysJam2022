@@ -5,19 +5,21 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-
 	public Text nameText;
 	public Text dialogueText;
 
 	public Animator animator;
 
 	private Queue<Sentence> sentences;
-	private DraggableMemory memory;
+	private MemoryContainer memoryContainer;
 	public GameObject dialogueCanvas;
 
 	public Canvas canvas;
 
 	private Player player;
+
+	[Header("PA INICIALIZAR MEMORIES")]
+	[SerializeField] MouseChecker checker;
 
 	// Use this for initialization
 	void Start()
@@ -54,16 +56,24 @@ public class DialogueManager : MonoBehaviour
 		Sentence sentence = sentences.Dequeue();
 		StopAllCoroutines();
 		StartCoroutine(TypeSentence(sentence.text));
-		if (memory)
+		if (memoryContainer)
 		{
 			//Destroy(memory.gameObject);
 
 		}
 		if (sentence.memory)
         {			
-			memory = Instantiate(sentence.memory).GetComponent<DraggableMemory>();
-			memory.SetParent(canvas.transform, false);
-			memory.SetCanvas(canvas);			
+			var aux = Instantiate(sentence.memory).GetComponent<MemoryContainer>();
+			var draggable = aux.draggable;
+			draggable.Initialize(checker);
+			draggable.SetParent(canvas.transform, false);
+			draggable.SetCanvas(canvas);
+
+			var real = aux.real;
+			real.Initialize(checker);
+			real.transform.SetParent(null);
+			Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2,0));
+			real.transform.position = new Vector3(pos.x, pos.y, real.transform.position.z);
         }
 	}
 

@@ -7,5 +7,5 @@ public class Sentence
 {
     [TextArea]
     public string text;
-    public DraggableMemory memory;
+    public MemoryContainer memory;
 }

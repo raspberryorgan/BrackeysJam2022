@@ -16,16 +16,16 @@ public class RealMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
 
     private void Awake()
     {
+    }
+    public void Initialize(MouseChecker _checker)
+    {
+        checker = _checker;
         cam = FindObjectOfType<Camera>();
         canvas = FindObjectOfType<Canvas>();
         player = FindObjectOfType<Player>();
         player.AddOnOpenInventory(StartEditing);
         player.AddOnCloseInventory(EndEditting);
-
-        checker = FindObjectOfType<MouseChecker>();//TODO: CAMBIARLO A ASIGNAR CUANDO SE INSTANCIA TODO
-    }
-    void Start()
-    {
+ 
         //gameObject.SetActive(false);
         checker.AddOnMouseEnter(OnInventoryEnter);
         checker.AddOnMouseExit(OnInventoryExit);

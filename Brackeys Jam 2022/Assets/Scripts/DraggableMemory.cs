@@ -19,11 +19,11 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
 
     void Awake()
     {
-        checker = FindObjectOfType<MouseChecker>();//TODO: CAMBIARLO A ASIGNAR CUANDO SE INSTANCIA TODO
 
     }
-    void Start()
+    public void Initialize(MouseChecker _checker)
     {
+        checker = _checker;//TODO: CAMBIARLO A ASIGNAR CUANDO SE INSTANCIA TODO
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         realMemory.draggableMemory = this;
@@ -31,7 +31,7 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
         checker.AddOnMouseExit(OnInventoryExit);
         checker.ADDONUPDATE(debugger);
         state = DragState.OnInventory;
-        gameObject.SetActive(false); 
+        gameObject.SetActive(false);
     }
     public void SetMemory(RealMemory _memory)
     {

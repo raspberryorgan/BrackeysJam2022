@@ -26,7 +26,9 @@ public class Player : MonoBehaviour
     public void RemoveOnCloseInventory(Action callback) { onCloseInventory -= callback; }
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); 
+        onOpenInventory = () => { };
+        onCloseInventory = () => { };
     }
 
     void Update()
