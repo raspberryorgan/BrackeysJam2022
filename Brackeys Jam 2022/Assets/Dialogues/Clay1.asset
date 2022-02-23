@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
-  m_Name: Dialogue3
+  m_Name: Clay1
   m_EditorClassIdentifier: 
   npcName: 
   sentences:
-  - text: dialogo 3.0
+  - text: 'Good morning,  '
     memory: {fileID: 0}
-  - text: gbvbhtr
+  - text: dialogo 1.1
+    memory: {fileID: 2484706400260382076, guid: 410ddb1f11dbb484a8ec5d791ef95397, type: 3}
+  - text: dialogo 1.2
     memory: {fileID: 0}
-  - text: fgjhtyuetuetyu
-    memory: {fileID: 0}
-  - text: rwrwerdfcvb
-    memory: {fileID: 0}
-  wasTalked: 0
+  wasTalked: 1

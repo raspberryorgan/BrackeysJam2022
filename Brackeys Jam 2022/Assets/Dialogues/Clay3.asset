@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
-  m_Name: Dialogue2
+  m_Name: Clay3
   m_EditorClassIdentifier: 
   npcName: 
   sentences:
-  - text: "dialogo 2.0\t"
+  - text: dialogo 3.0
     memory: {fileID: 0}
-  - text: dialogo 2.1
+  - text: gbvbhtr
+    memory: {fileID: 0}
+  - text: fgjhtyuetuetyu
+    memory: {fileID: 0}
+  - text: rwrwerdfcvb
     memory: {fileID: 0}
   wasTalked: 0
