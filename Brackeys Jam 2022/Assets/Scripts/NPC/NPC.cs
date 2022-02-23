@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPC : Interactable
 {
     public Mission mission;
+    public Player player;
     // Start is called before the first frame update
     void Start()
     {
