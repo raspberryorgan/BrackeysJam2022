@@ -5,33 +5,36 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] int inventorySize;
-    [SerializeField] MemorySlot[] myMemories;
-
-
+    [SerializeField] List<MissionItem> inventory = new List<MissionItem>();
+  
     private void Start()
     {
-        myMemories = new MemorySlot[inventorySize];
     }
-    public void AddMemory(MemorySlot memory)
+    public void AddItem(MissionItem item)
     {
-        for (int i = 0; i < myMemories.Length; i++)
-        {
-            if (myMemories[i] == memory) return;
+        inventory.Add(item);
+    }
 
-        }
-
-        for (int i = 0; i < myMemories.Length; i++)
+    public void RemoveMemory(MissionItem item)
+    {
+        if (inventory.Contains(item))
         {
-            if(myMemories[i] == null)
-            {
-                myMemories[i] = memory;
-                return;
-            }
+            inventory.Remove(item);
         }
     }
-
-    public void RemoveMemory()
+    public bool ContainsItem(MissionItem item)
     {
-
+        return inventory.Contains(item);
     }
+    public bool ContainsXItems(MissionItem item, int cant)
+    {
+        var a = 0;
+        foreach (var i in inventory)
+        {
+            if (i.itemName == item.itemName) a += 1;
+        }
+        return a >= cant;
+    }
+
+
 }
