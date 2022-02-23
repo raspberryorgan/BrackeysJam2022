@@ -306,6 +306,7 @@ GameObject:
   - component: {fileID: 115388833}
   - component: {fileID: 115388832}
   - component: {fileID: 115388836}
+  - component: {fileID: 115388837}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -332,7 +333,8 @@ MonoBehaviour:
   interactableMask:
     serializedVersion: 2
     m_Bits: 128
-  inventory: {fileID: 1280409392}
+  memoryInventory: {fileID: 0}
+  objectsInventory: {fileID: 115388837}
 --- !u!50 &115388833
 Rigidbody2D:
   serializedVersion: 4
@@ -446,6 +448,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &115388837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115388831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04dd86eff731e6745b6db5af7d655a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 0
+  inventory:
+  - {fileID: 998869505065543577, guid: f85f807321ba52f4cacd49bf5d145acd, type: 3}
+  - {fileID: 998869505065543577, guid: f85f807321ba52f4cacd49bf5d145acd, type: 3}
+  - {fileID: 998869505065543577, guid: f85f807321ba52f4cacd49bf5d145acd, type: 3}
+  - {fileID: 998869505065543577, guid: f85f807321ba52f4cacd49bf5d145acd, type: 3}
 --- !u!1 &122225041
 GameObject:
   m_ObjectHideFlags: 0
@@ -7512,7 +7532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mission:
-    type: 0
+    type: 1
     dialogues:
     - {fileID: 11400000, guid: bd9b708d1d26939448a418aaedc369c7, type: 2}
     - {fileID: 11400000, guid: 7c323c197e2350247a234f80db053715, type: 2}
@@ -7521,7 +7541,8 @@ MonoBehaviour:
     award: {fileID: 0}
     state: 0
     currentAmount: 0
-    requiredAmount: 0
+    requiredAmount: 5
+    item: {fileID: 998869505065543577, guid: f85f807321ba52f4cacd49bf5d145acd, type: 3}
 --- !u!212 &912352061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9961,6 +9982,7 @@ MonoBehaviour:
     state: 0
     currentAmount: 0
     requiredAmount: 0
+    item: {fileID: 0}
 --- !u!212 &1992461190
 SpriteRenderer:
   m_ObjectHideFlags: 0

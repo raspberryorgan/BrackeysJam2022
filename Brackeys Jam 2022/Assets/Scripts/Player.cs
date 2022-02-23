@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     Vector3 lastDir;
     public Transform interactPos;
     public LayerMask interactableMask;
-    public GameObject inventory;
+    public GameObject memoryInventory;
+    public Inventory objectsInventory;
 
     Action onOpenInventory = () => { };
     Action onCloseInventory = () => { };
@@ -48,10 +49,10 @@ public class Player : MonoBehaviour
 
     void InventoryChange()
     {
-        if (inventory.activeSelf) onCloseInventory();
+        if (memoryInventory.activeSelf) onCloseInventory();
         else
             onOpenInventory();
-        inventory.SetActive(!inventory.activeSelf);
+        memoryInventory.SetActive(!memoryInventory.activeSelf);
     }
     void TryInteract()
     {

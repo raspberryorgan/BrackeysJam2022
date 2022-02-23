@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   sentences:
-  - text: "dialogo 2.0\t"
-    memory: {fileID: 0}
-  - text: dialogo 2.1
+  - text: Did you have the five coins? No? Go and find some people to help!
     memory: {fileID: 0}
   wasTalked: 0

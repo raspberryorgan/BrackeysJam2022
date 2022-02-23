@@ -5,11 +5,11 @@ using UnityEngine;
 public class NPC : Interactable
 {
     public Mission mission;
-    public Player player;
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -29,11 +29,22 @@ public class NPC : Interactable
         }
         if (mission.state == MissionStates.InProgress)
         {
-            FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[1]);
             //Cosas de cambiar la mision a completed
-            return;
+
+            if (player.objectsInventory.ContainsXItems(mission.item, mission.requiredAmount))
+            {
+                mission.state = MissionStates.Completed;
+
+            }
+            else
+            {
+
+                FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[1]);
+                return;
+            }
 
         }
+        
         if (mission.state == MissionStates.Completed)
         {
             FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[2]);
@@ -46,6 +57,6 @@ public class NPC : Interactable
             FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[3]);
             return;
         }
-
+        
     }
 }

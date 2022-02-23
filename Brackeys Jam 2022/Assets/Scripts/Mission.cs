@@ -11,6 +11,7 @@ public class Mission
     public MissionStates state = MissionStates.NotActivated;
     public int currentAmount;
     public int requiredAmount;
+    public MissionItem item;
     public virtual void Init()
     {
         foreach (Dialogue d in dialogues)
