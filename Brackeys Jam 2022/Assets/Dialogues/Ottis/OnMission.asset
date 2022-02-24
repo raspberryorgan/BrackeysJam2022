@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: OnMission
   m_EditorClassIdentifier: 
   npcName: 
-  sentences: []
+  sentences:
+  - text: I need some baits
+    memory: {fileID: 0}
   wasTalked: 0

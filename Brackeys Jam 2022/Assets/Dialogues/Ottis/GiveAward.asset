@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: GiveAward
   m_EditorClassIdentifier: 
   npcName: 
-  sentences: []
+  sentences:
+  - text: Wow, thanks bud! Have this for the trouble
+    memory: {fileID: 0}
   wasTalked: 0
