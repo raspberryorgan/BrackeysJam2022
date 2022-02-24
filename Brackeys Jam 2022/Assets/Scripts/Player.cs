@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     public void RemoveOnCloseInventory(Action callback) { onCloseInventory -= callback; }
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
         onOpenInventory = () => { };
         onCloseInventory = () => { };
     }
@@ -58,15 +58,17 @@ public class Player : MonoBehaviour
     }
     void TryInteract()
     {
-        var aux = Physics2D.CircleCast(interactPos.position, .2f, Vector2.zero, interactableMask);
-        if (aux.transform != null)
+        var aux = Physics2D.CircleCastAll(interactPos.position, .2f, Vector2.zero, interactableMask);
+        foreach (var item in aux)
         {
-            var interactable = aux.transform.GetComponent<Interactable>();
-            if (interactable != null)
+            if (item.transform != null)
             {
-                interactable.Interact();
+                var interactable = item.transform.GetComponent<Interactable>();
+                if (interactable != null)
+                {
+                    interactable.Interact(this);
+                }
             }
-
         }
     }
     void InteractPos()
@@ -87,5 +89,10 @@ public class Player : MonoBehaviour
             lastDir = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
         }
         else rb.velocity = Vector2.zero;
+    }
+
+    public void AddToInventory(MissionItem item)
+    {
+        objectsInventory.AddItem(item);
     }
 }

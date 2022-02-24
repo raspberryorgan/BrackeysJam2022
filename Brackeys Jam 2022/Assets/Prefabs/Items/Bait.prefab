@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 573276815301748767}
   - component: {fileID: 85913848610787778}
-  - component: {fileID: 715098123360538374}
-  m_Layer: 0
+  - component: {fileID: 8240301153445189416}
+  - component: {fileID: 4319827526236862305}
+  m_Layer: 7
   m_Name: Bait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2444080973019914327, guid: f620b8eab03b29e4b8132189804b3e7e, type: 3}
+  m_Sprite: {fileID: 5508725064705088119, guid: f604aa6c2d1c28b4fa15ea0d065437d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &715098123360538374
+--- !u!114 &8240301153445189416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +93,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 2677494640277091167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74604d4e406c01845a8bda3ec9ac759f, type: 3}
+  m_Script: {fileID: 11500000, guid: d79407108ecc83a4387ed831d0384e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Bait
+  isInRightPlace: 0
+--- !u!61 &4319827526236862305
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2677494640277091167}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.021522284, y: -0.121062994}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4842522, y: 1.2959318}
+  m_EdgeRadius: 0

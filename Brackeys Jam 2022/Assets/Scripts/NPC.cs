@@ -17,7 +17,7 @@ public class NPC : Interactable
     {
         
     }
-    public override void Interact()
+    public override void Interact(Player player)
     {
         if (mission.state == MissionStates.NotActivated)
         {
@@ -30,11 +30,10 @@ public class NPC : Interactable
         if (mission.state == MissionStates.InProgress)
         {
             //Cosas de cambiar la mision a completed
-
+            Debug.Log( player.objectsInventory.ContainsXItems(mission.item, mission.requiredAmount));
             if (player.objectsInventory.ContainsXItems(mission.item, mission.requiredAmount))
             {
                 mission.state = MissionStates.Completed;
-
             }
             else
             {
@@ -49,7 +48,7 @@ public class NPC : Interactable
         {
             FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[2]);
             mission.state = MissionStates.Claimed;
-            //reclama la mision
+            player.AddToInventory(mission.award);
             return;
         }
         if (mission.state == MissionStates.Claimed)

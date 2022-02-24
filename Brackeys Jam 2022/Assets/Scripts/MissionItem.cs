@@ -5,20 +5,9 @@ using UnityEngine;
 public class MissionItem : Interactable
 {
     public string itemName;
-    // Start is called before the first frame update
-    void Start()
+    public override void Interact(Player player)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public override void Interact()
-    {
-
+        player.AddToInventory(this);
+        gameObject.SetActive(false);
     }
 }

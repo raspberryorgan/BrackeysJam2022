@@ -7,7 +7,7 @@ public class Mission
 {
     public MissionType type;
     public Dialogue[] dialogues = new Dialogue[4];
-    public GameObject award;
+    public MissionItem award;
     public MissionStates state = MissionStates.NotActivated;
     public int currentAmount;
     public int requiredAmount;
