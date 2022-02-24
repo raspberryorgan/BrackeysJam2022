@@ -48,7 +48,7 @@ public class CheckPlayerOn : MonoBehaviour
 
     void OnPlaced()
     {
-        toTurnOff = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0);
+        toTurnOff = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0, collidersMask);
         Debug.Log(toTurnOff.Length);
         foreach (var item in toTurnOff)
         {
