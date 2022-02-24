@@ -30,18 +30,18 @@ public class CheckPlayerOn : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (placed && collidersMask.Contains(collision.gameObject.layer))
-        {
-            collision.GetComponent<Collider2D>().enabled = false;
-        }
+        //if (placed && collidersMask.Contains(collision.gameObject.layer))
+        //{
+        //    collision.GetComponent<Collider2D>().enabled = false;
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collidersMask.Contains(collision.gameObject.layer))
-        {
-            collision.GetComponent<Collider2D>().enabled = true;
-        }
+        //if (collidersMask.Contains(collision.gameObject.layer))
+        //{
+        //    collision.GetComponent<Collider2D>().enabled = true;
+        //}
     }
 
     Collider2D[] toTurnOff;
@@ -49,11 +49,12 @@ public class CheckPlayerOn : MonoBehaviour
     void OnPlaced()
     {
         toTurnOff = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0, collidersMask);
-        Debug.Log(toTurnOff.Length);
         foreach (var item in toTurnOff)
         {
+            Debug.Log("APAGAR: " + item);
             item.enabled = false;
         }
+
         for (int i = 0; i < collidersToTurnOn.Length; i++)
         {
             collidersToTurnOn[i].enabled = true;
@@ -62,6 +63,7 @@ public class CheckPlayerOn : MonoBehaviour
 
     void OnRemoved()
     {
+        Debug.Log("PRENDIENDO: " + toTurnOff.Length);
         foreach (var item in toTurnOff)
         {
             item.enabled = true;
@@ -70,5 +72,10 @@ public class CheckPlayerOn : MonoBehaviour
         {
             collidersToTurnOn[i].enabled = false;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawCube(transform.position, transform.localScale);
     }
 }

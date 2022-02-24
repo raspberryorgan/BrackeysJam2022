@@ -696,6 +696,7 @@ GameObject:
   - component: {fileID: 323281259}
   - component: {fileID: 323281261}
   - component: {fileID: 323281260}
+  - component: {fileID: 323281262}
   m_Layer: 8
   m_Name: Square (1)
   m_TagString: Untagged
@@ -794,6 +795,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &323281262
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323281258}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &533630757
 GameObject:
   m_ObjectHideFlags: 0
@@ -7687,6 +7709,7 @@ GameObject:
   - component: {fileID: 1029808957}
   - component: {fileID: 1029808959}
   - component: {fileID: 1029808958}
+  - component: {fileID: 1029808960}
   m_Layer: 8
   m_Name: Square (4)
   m_TagString: Untagged
@@ -7785,6 +7808,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1029808960
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029808956}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1090880133
 GameObject:
   m_ObjectHideFlags: 0
@@ -7796,6 +7840,7 @@ GameObject:
   - component: {fileID: 1090880134}
   - component: {fileID: 1090880136}
   - component: {fileID: 1090880135}
+  - component: {fileID: 1090880137}
   m_Layer: 8
   m_Name: Square (3)
   m_TagString: Untagged
@@ -7894,6 +7939,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1090880137
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090880133}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1172377278
 GameObject:
   m_ObjectHideFlags: 0
@@ -8492,7 +8558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7753119, y: 0}
   m_AnchorMax: {x: 1, y: 0.12900001}
-  m_AnchoredPosition: {x: 1.5, y: 11}
+  m_AnchoredPosition: {x: 1.4999695, y: 11}
   m_SizeDelta: {x: -7, y: -24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1373497969
@@ -8747,6 +8813,7 @@ GameObject:
   - component: {fileID: 1652485045}
   - component: {fileID: 1652485047}
   - component: {fileID: 1652485046}
+  - component: {fileID: 1652485048}
   m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
@@ -8845,6 +8912,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1652485048
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652485044}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1652888603
 GameObject:
   m_ObjectHideFlags: 0
@@ -9202,6 +9290,7 @@ GameObject:
   - component: {fileID: 1758642183}
   - component: {fileID: 1758642185}
   - component: {fileID: 1758642184}
+  - component: {fileID: 1758642186}
   m_Layer: 8
   m_Name: Square (2)
   m_TagString: Untagged
@@ -9300,6 +9389,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1758642186
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758642182}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1781388205
 GameObject:
   m_ObjectHideFlags: 0
@@ -9540,7 +9650,7 @@ MonoBehaviour:
     state: 0
     currentAmount: 0
     requiredAmount: 0
-    item: {fileID: 0}
+    item: {fileID: 998869505065543577, guid: f85f807321ba52f4cacd49bf5d145acd, type: 3}
 --- !u!212 &1992461190
 SpriteRenderer:
   m_ObjectHideFlags: 0
