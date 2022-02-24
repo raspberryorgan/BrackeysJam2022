@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: -8470807427472998877
     second: iconspixelart_1
+  - first:
+      213: 2444080973019914327
+    second: iconspixelart_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -146,6 +149,27 @@ TextureImporter:
       bones: []
       spriteID: 32e3bb46685a17a80800000000000000
       internalID: -8470807427472998877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconspixelart_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 480
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750a42712be1be120800000000000000
+      internalID: 2444080973019914327
       vertices: []
       indices: 
       edges: []
