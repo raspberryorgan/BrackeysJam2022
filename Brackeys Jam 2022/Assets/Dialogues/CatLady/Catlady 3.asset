@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
   m_Name: Catlady 3
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Catlady
   sentences:
   - text: Mr. Fluffypants! OMG OMG OMG! You found him! Thank a lot! Here, take this
       as your reward

@@ -12,7 +12,7 @@ public class RealMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     [HideInInspector]
     public MouseChecker checker;
 
-    public MemoryState state { get; private set; } 
+    public MemoryState state { get;  set; } 
 
     private void Awake()
     {
@@ -27,8 +27,6 @@ public class RealMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
         player.AddOnCloseInventory(EndEditting);
  
         //gameObject.SetActive(false);
-        checker.AddOnMouseEnter(OnInventoryEnter);
-        checker.AddOnMouseExit(OnInventoryExit);
         state = MemoryState.Placed;
         checker.ADDONUPDATE(debugger);
     }
@@ -47,7 +45,7 @@ public class RealMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
             if (targetObject == GetComponent<Collider2D>())
             {
                 state = MemoryState.Selected;
-                draggableMemory.state = DragState.Selected;
+               
             }
         }
         if (Input.GetMouseButtonUp(0) && state == MemoryState.Selected)
@@ -66,21 +64,18 @@ public class RealMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
             //transform.position = newPos;
         }
     }
-    void OnInventoryEnter()
+    public void OnInventoryEnter()
     {
-        if (state == MemoryState.Selected)
-        {
-            gameObject.SetActive(false);
-        }
+        state = MemoryState.OnInventory;
+        gameObject.SetActive(false);
+        
     }
 
-    void OnInventoryExit()
+     public void OnInventoryExit()
     {
-        if (draggableMemory.state == DragState.Selected)
-        {
-            gameObject.SetActive(true);
-            state = MemoryState.Selected;
-        }
+        state = MemoryState.Selected;
+        gameObject.SetActive(true);
+        
     }
 
     void StartEditing()
@@ -119,6 +114,6 @@ public enum MemoryState
 {
     Placed,
     PlacedInEditMode,
-    Selected
-
+    Selected,
+    OnInventory
 }

@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         //animator.SetBool("IsOpen", true);
-        Debug.Log("Starting new Dialogue");
+        //Debug.Log("Starting new Dialogue");
         dialogueCanvas.SetActive(true);
         nameText.text = dialogue.npcName;
 
@@ -102,7 +102,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         //animator.SetBool("IsOpen", false);
-        Debug.Log("End Dialogue.");
+        //Debug.Log("End Dialogue.");
         dialogueCanvas.SetActive(false);
         player.isBusy = false;
     }

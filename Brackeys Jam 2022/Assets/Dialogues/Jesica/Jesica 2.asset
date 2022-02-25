@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
   m_Name: Jesica 2
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Jesica
   sentences:
   - text: Did you find any use for those seeds?
     memory: {fileID: 0}
+    missionItem: {fileID: 0}
   wasTalked: 0

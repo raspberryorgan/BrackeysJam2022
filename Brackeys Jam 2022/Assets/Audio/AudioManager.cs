@@ -51,11 +51,11 @@ public class AudioManager : MonoBehaviour {
             asource.pitch = s.pitch;
             asource.loop = s.loop;
             asource.Play();
-            Debug.Log("Playing " + soundName);
+            //Debug.Log("Playing " + soundName);
         }
         else
         {
-            Debug.Log(soundName + " not found.");
+            //Debug.Log(soundName + " not found.");
         }
     }
     public void PlayStep()
@@ -73,7 +73,7 @@ public class AudioManager : MonoBehaviour {
     {
         AudioSource asource = audioSources.Where(x => x.isPlaying == false).First();
         asource.mute = false;
-        Debug.Log(asource);
+        //Debug.Log(asource);
         return asource;
     }
 }

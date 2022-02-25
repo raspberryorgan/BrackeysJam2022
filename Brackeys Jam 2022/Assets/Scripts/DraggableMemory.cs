@@ -8,7 +8,7 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
 {
     [SerializeField] Canvas canvas;
     RectTransform rectTransform;
-    CanvasGroup canvasGroup;
+     [HideInInspector] public CanvasGroup canvasGroup;
 
     Transform lastParent;
     public RealMemory realMemory;
@@ -30,7 +30,7 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
         checker.AddOnMouseEnter(OnInventoryEnter);
         checker.AddOnMouseExit(OnInventoryExit);
         checker.ADDONUPDATE(debugger);
-        state = DragState.OnInventory;
+        state = DragState.OnRealMemory;
         gameObject.SetActive(false);
     }
     public void SetMemory(RealMemory _memory)
@@ -68,8 +68,8 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
             {
                 rectTransform.anchoredPosition = Vector2.zero;
             }
-            if (state == DragState.Selected)
-                state = DragState.OnInventory;
+            
+            state = DragState.OnInventory;
         }
     }
 
@@ -78,7 +78,6 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
         if (state == DragState.OnInventory)
         {
             canvasGroup.blocksRaycasts = false;
-            realMemory.SetState(MemoryState.Selected);
             state = DragState.Selected;
         }
     }
@@ -91,20 +90,23 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
 
     void OnInventoryEnter()
     {
-        if (realMemory.state == MemoryState.Selected && state == DragState.Selected)
+        if (realMemory.state == MemoryState.Selected && state == DragState.OnRealMemory)
         {
             Vector3 aux = Camera.main.WorldToScreenPoint( realMemory.transform.position);
             transform.position = new Vector3(aux.x, aux.y, transform.position.z);
             gameObject.SetActive(true);
             state = DragState.Selected;
+            realMemory.OnInventoryEnter();
             canvasGroup.blocksRaycasts = false;
         }
     }
 
     void OnInventoryExit()
     {
-        if (state == DragState.Selected )
+        if (state == DragState.Selected && realMemory.state == MemoryState.OnInventory )
         {
+            state = DragState.OnRealMemory;
+            realMemory.OnInventoryExit();
             gameObject.SetActive(false);
         }
     }
@@ -117,7 +119,8 @@ public class DraggableMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHan
 public enum DragState
 {
     OnInventory,
-    Selected
+    Selected,
+    OnRealMemory
 }
 
 

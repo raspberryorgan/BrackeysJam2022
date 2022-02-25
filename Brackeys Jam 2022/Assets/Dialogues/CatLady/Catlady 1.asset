@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
   m_Name: Catlady 1
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Catlady
   sentences:
-  - text: I lost my cat
+  - text: I lost my <b>cat</b>
     memory: {fileID: 0}
     missionItem: {fileID: 0}
-  - text: He liked to be around the fish shop, playing with the bell
+  - text: He liked to be around the <b>fish shop</b>, playing with the <b>bell</b>
     memory: {fileID: 4476071940247980138, guid: e716031b1d90d604594a86ad12444eaa, type: 3}
     missionItem: {fileID: 0}
   wasTalked: 1

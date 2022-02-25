@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
   m_Name: Bobby 0
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Bobby
   sentences:
   - text: Howdy partner!
     memory: {fileID: 0}
+    missionItem: {fileID: 0}
   - text: 'I am sad u.u My farm got infected. '
     memory: {fileID: 0}
+    missionItem: {fileID: 0}
   - text: I remember growing so much vegetables in there
     memory: {fileID: 4476071940247980138, guid: 5fe56a40fca3bb14780cd75c998424ff, type: 3}
+    missionItem: {fileID: 0}
   wasTalked: 1

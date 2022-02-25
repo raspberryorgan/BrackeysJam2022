@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
   m_Name: Jesica 1
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Jesica
   sentences:
   - text: "I wanted to make my grandma\xB4s famous ratatouiile but I don\xB4t have
       any carrots"

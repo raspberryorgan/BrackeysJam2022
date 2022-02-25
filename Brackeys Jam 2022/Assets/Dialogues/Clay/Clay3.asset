@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
   m_Name: Clay3
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Clay
   sentences:
   - text: dialogo 3.0
     memory: {fileID: 0}
+    missionItem: {fileID: 0}
   - text: gbvbhtr
     memory: {fileID: 0}
+    missionItem: {fileID: 0}
   - text: fgjhtyuetuetyu
     memory: {fileID: 0}
+    missionItem: {fileID: 0}
   - text: rwrwerdfcvb
     memory: {fileID: 0}
+    missionItem: {fileID: 0}
   wasTalked: 0

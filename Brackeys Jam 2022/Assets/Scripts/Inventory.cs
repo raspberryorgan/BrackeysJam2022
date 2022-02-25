@@ -46,4 +46,14 @@ public class Inventory : MonoBehaviour
         return a >= cant;
     }
 
+    public float HowManyItems(MissionItem item)
+    {
+        var a = 0;
+        foreach (var i in inventory)
+        {
+            if (i.itemName == item.itemName) a += 1;
+        }
+        return a;
+    }
+
 }
