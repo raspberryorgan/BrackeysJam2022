@@ -23,7 +23,7 @@ public class Carrot : MissionItem
     // Update is called once per frame
     void Update()
     {
-        if (!harvestReady)
+        if (!harvestReady && plot.isInRightPlace)
         {
             growtimer += Time.deltaTime;
             Debug.Log(Mathf.FloorToInt((growtimer / growTime) * (sprites.Length - 1)));

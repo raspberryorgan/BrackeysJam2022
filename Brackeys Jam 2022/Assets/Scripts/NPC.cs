@@ -29,7 +29,6 @@ public class NPC : Interactable
         if (mission.state == MissionStates.InProgress)
         {
             //Cosas de cambiar la mision a completed
-            Debug.Log( player.objectsInventory.ContainsXItems(mission.item, mission.requiredAmount));
             if (player.objectsInventory.ContainsXItems(mission.item, mission.requiredAmount))
             {
                 mission.state = MissionStates.Completed;

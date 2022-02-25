@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Plot : Interactable
 {
+
+    public bool isInRightPlace;
+
     public bool hasPlant;
     public Seed seed;
     Carrot carr;
     public override void Interact(Player player)
     {
-        if (!hasPlant && player.objectsInventory.ContainsItem(seed))
+        if (isInRightPlace && !hasPlant && player.objectsInventory.ContainsItem(seed))
         {
             Debug.Log("LO CONTIENE");
 

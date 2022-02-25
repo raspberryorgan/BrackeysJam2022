@@ -7,8 +7,7 @@ public class CheckPlayerOn : MemoryBase
     [SerializeField] protected LayerMask collidersMask;
     [SerializeField] protected Collider2D[] collidersToTurnOn;
 
-   
-    [SerializeField] protected Collider2D[] toTurnOff;
+    protected Collider2D[] toTurnOff;
     public virtual void Start()
     {
 

@@ -43,7 +43,6 @@ public class Inventory : MonoBehaviour
         {
             if (i.itemName == item.itemName) a += 1;
         }
-        Debug.Log(a);
         return a >= cant;
     }
 
