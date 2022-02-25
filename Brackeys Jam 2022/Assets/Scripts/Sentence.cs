@@ -8,4 +8,5 @@ public class Sentence
     [TextArea]
     public string text;
     public MemoryContainer memory;
+    public MissionItem missionItem;
 }

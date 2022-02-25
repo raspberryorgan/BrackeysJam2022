@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
-  m_Name: Jesica 1
+  m_Name: Catlady 1
   m_EditorClassIdentifier: 
   npcName: 
   sentences:
-  - text: "I wanted to make my grandma\xB4s famous ratatouiile but I don\xB4t have
-      any carrots"
+  - text: I lost my cat
     memory: {fileID: 0}
     missionItem: {fileID: 0}
-  - text: "I only have this seeeds, but I can\xB4t do anything with them. "
-    memory: {fileID: 0}
-    missionItem: {fileID: 3904602523096919722, guid: c01860b10a4798f48927ad9c61e0a143, type: 3}
-  - text: "I\xB4ll give them to you, maybe you can figure out something"
-    memory: {fileID: 0}
+  - text: He liked to be around the fish shop, playing with the bell
+    memory: {fileID: 4476071940247980138, guid: e716031b1d90d604594a86ad12444eaa, type: 3}
     missionItem: {fileID: 0}
   wasTalked: 1

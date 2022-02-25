@@ -36,7 +36,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (isBusy) return;
+        if (isBusy) {
+            rb.velocity = Vector2.zero;
+            return; }
         Move();
         InteractPos();
 
