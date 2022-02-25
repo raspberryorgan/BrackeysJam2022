@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] int inventorySize;
     [SerializeField] List<MissionItem> inventory = new List<MissionItem>();
-  
+
     private void Start()
     {
     }
@@ -15,16 +15,17 @@ public class Inventory : MonoBehaviour
         inventory.Add(item);
     }
 
-    public void RemoveItem(MissionItem item)
+    public MissionItem RemoveItem(MissionItem item)
     {
         foreach (var i in inventory)
         {
             if (i.itemName == item.itemName)
             {
                 inventory.Remove(i);
-                return;
+                return i;
             }
         }
+        return null;
     }
     public bool ContainsItem(MissionItem item)
     {
@@ -34,6 +35,7 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
+
     public bool ContainsXItems(MissionItem item, int cant)
     {
         var a = 0;

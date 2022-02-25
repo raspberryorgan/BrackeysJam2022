@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Seed : MissionItem
 {
-    // Start is called before the first frame update
+    public Carrot carrot;
+
     void Start()
     {
         
