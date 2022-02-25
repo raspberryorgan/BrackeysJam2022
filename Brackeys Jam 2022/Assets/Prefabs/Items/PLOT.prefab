@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3048494871738899280, guid: f620b8eab03b29e4b8132189804b3e7e, type: 3}
+  m_Sprite: {fileID: 2730378590711135102, guid: 016f0b6bcf2f50a46843acb6a02bc0f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74604d4e406c01845a8bda3ec9ac759f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: 
   itemName: Flower
 --- !u!61 &-1940331007591529422
 BoxCollider2D:
