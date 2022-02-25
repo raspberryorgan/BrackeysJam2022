@@ -15,16 +15,24 @@ public class Inventory : MonoBehaviour
         inventory.Add(item);
     }
 
-    public void RemoveMemory(MissionItem item)
+    public void RemoveItem(MissionItem item)
     {
-        if (inventory.Contains(item))
+        foreach (var i in inventory)
         {
-            inventory.Remove(item);
+            if (i.itemName == item.itemName)
+            {
+                inventory.Remove(i);
+                return;
+            }
         }
     }
     public bool ContainsItem(MissionItem item)
     {
-        return inventory.Contains(item);
+        foreach (var i in inventory)
+        {
+            if (i.itemName == item.itemName) return true;
+        }
+        return false;
     }
     public bool ContainsXItems(MissionItem item, int cant)
     {
