@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 public class AudioManager : MonoBehaviour {
 
     public Sound[] sounds;
@@ -9,13 +10,13 @@ public class AudioManager : MonoBehaviour {
     public static AudioManager instance;
 
     void Awake() {
-        if ( instance != null ) {
+        if (instance != null) {
             Destroy(gameObject);
         } else {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        foreach(Sound s in sounds)
+        foreach (Sound s in sounds)
         {
             s.audioSource = gameObject.AddComponent<AudioSource>();
             s.audioSource.clip = s.clip;
@@ -30,20 +31,31 @@ public class AudioManager : MonoBehaviour {
 
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-	if (Input.GetKeyDown(KeyCode.X))
+
+    // Update is called once per frame
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            Play("test");
+            PlayStep();
         }
-	}
+    }
     public void Play(string soundName)
     {
         Sound s = Array.Find(sounds, sound => sound.name == soundName);
-        if (s!= null)
+        if (s != null)
         {
             s.audioSource.Play();
+            Debug.Log("Playing " + soundName);
         }
+        else
+        {
+            Debug.Log(soundName + " not found.");
+        }
+    }
+    public void PlayStep()
+    {
+        List<Sound> list = sounds.Where(x => x.name == "step").ToList();
+        Sound s = list[UnityEngine.Random.Range(0, list.Count - 1)];
+        s.audioSource.Play();
     }
 }

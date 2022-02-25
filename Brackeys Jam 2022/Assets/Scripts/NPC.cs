@@ -5,11 +5,9 @@ using UnityEngine;
 public class NPC : Interactable
 {
     public Mission mission;
-    private Player player;
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -19,6 +17,7 @@ public class NPC : Interactable
     }
     public override void Interact(Player player)
     {
+        AudioManager.instance.Play(sound);
         if (mission.state == MissionStates.NotActivated)
         {
             mission.Init();
@@ -49,6 +48,7 @@ public class NPC : Interactable
             FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[2]);
             mission.state = MissionStates.Claimed;
             player.AddToInventory(mission.award);
+            AudioManager.instance.Play("award");
             return;
         }
         if (mission.state == MissionStates.Claimed)

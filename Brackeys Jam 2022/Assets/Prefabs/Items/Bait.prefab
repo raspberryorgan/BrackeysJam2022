@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79407108ecc83a4387ed831d0384e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: dig
   itemName: Bait
   isInRightPlace: 0
 --- !u!61 &4319827526236862305

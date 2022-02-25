@@ -9,6 +9,7 @@ public class Bait : MissionItem
     
     public override void Interact(Player player)
     {
+        AudioManager.instance.Play(sound);
         if (isInRightPlace)
         {
             player.AddToInventory(this);

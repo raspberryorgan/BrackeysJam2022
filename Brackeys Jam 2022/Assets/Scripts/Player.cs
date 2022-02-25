@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     public GameObject memoryInventory;
     public Inventory objectsInventory;
 
+    public float stepTime;
+    private float soundTime;
+
     Action onOpenInventory = () => { };
     Action onCloseInventory = () => { };
 
@@ -82,11 +85,23 @@ public class Player : MonoBehaviour
         {
             rb.velocity = (Vector2.up * Input.GetAxisRaw("Vertical")).normalized * speed;
             lastDir = new Vector2(0, Input.GetAxisRaw("Vertical"));
+            soundTime += Time.deltaTime;
+            if (soundTime > stepTime)
+            {
+                AudioManager.instance.PlayStep();
+                soundTime = 0;
+            }
         }
         else if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
         {
             rb.velocity = (Vector2.right * Input.GetAxisRaw("Horizontal")).normalized * speed;
             lastDir = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+            soundTime += Time.deltaTime;
+            if (soundTime > stepTime)
+            {
+                AudioManager.instance.PlayStep();
+                soundTime = 0;
+            }
         }
         else rb.velocity = Vector2.zero;
     }

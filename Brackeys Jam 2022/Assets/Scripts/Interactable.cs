@@ -4,5 +4,7 @@ using UnityEngine;
 
 public abstract class Interactable: MonoBehaviour
 {
+
+    public string sound;
     public abstract void Interact(Player player);
 }
