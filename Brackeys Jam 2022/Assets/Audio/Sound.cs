@@ -18,6 +18,4 @@ public class Sound  {
     public float pitchVariance = .1f;
 
     public bool loop;
-    [HideInInspector]
-    public AudioSource audioSource;
 }

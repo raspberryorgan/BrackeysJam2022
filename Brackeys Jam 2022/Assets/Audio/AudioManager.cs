@@ -6,6 +6,8 @@ using System.Linq;
 public class AudioManager : MonoBehaviour {
 
     public Sound[] sounds;
+    public int sources;
+    AudioSource[] audioSources;
 
     public static AudioManager instance;
 
@@ -18,11 +20,13 @@ public class AudioManager : MonoBehaviour {
         }
         foreach (Sound s in sounds)
         {
-            s.audioSource = gameObject.AddComponent<AudioSource>();
-            s.audioSource.clip = s.clip;
-            s.audioSource.volume = s.volume;
-            s.audioSource.pitch = s.pitch;
-            s.audioSource.loop = s.loop;
+            
+        }
+        audioSources = new AudioSource[sources];
+        for (int i = 0; i < sources; i++)
+        {
+            audioSources[i] = gameObject.AddComponent<AudioSource>();
+            audioSources[i].mute = true;
         }
     }
     // Use this for initialization
@@ -34,17 +38,19 @@ public class AudioManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            PlayStep();
-        }
+        
     }
     public void Play(string soundName)
     {
         Sound s = Array.Find(sounds, sound => sound.name == soundName);
         if (s != null)
         {
-            s.audioSource.Play();
+            AudioSource asource = FindAudioSource();
+            asource.clip = s.clip;
+            asource.volume = s.volume;
+            asource.pitch = s.pitch;
+            asource.loop = s.loop;
+            asource.Play();
             Debug.Log("Playing " + soundName);
         }
         else
@@ -55,7 +61,19 @@ public class AudioManager : MonoBehaviour {
     public void PlayStep()
     {
         List<Sound> list = sounds.Where(x => x.name == "step").ToList();
-        Sound s = list[UnityEngine.Random.Range(0, list.Count - 1)];
-        s.audioSource.Play();
+        Sound s = list[UnityEngine.Random.Range(0, list.Count )];
+        AudioSource asource = FindAudioSource();
+        asource.clip = s.clip;
+        asource.volume = s.volume;
+        asource.pitch = s.pitch;
+        asource.loop = s.loop;
+        asource.Play();
+    }
+    AudioSource FindAudioSource()
+    {
+        AudioSource asource = audioSources.Where(x => x.isPlaying == false).First();
+        asource.mute = false;
+        Debug.Log(asource);
+        return asource;
     }
 }
