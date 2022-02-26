@@ -112,9 +112,6 @@ public class Player : MonoBehaviour
     public void AddToInventory(MissionItem item)
     {
         objectsInventory.AddItem(item);
-        if (item.itemName == "Coin")
-        {
-            UIManager.instance.RefreshCoin(objectsInventory.HowManyItems(item));
-        }
+        UIManager.instance.Refresh("Refresh" + item.itemName);
     }
 }

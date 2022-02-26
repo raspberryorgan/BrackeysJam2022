@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
     public GameObject carrotBox;
     public TMP_Text carrotText;
 
+    public Player player;
+
     public void Awake()
     {
         if (instance != null)
@@ -34,10 +36,62 @@ public class UIManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    public void RefreshCoin(int c)
+    public void Refresh(string functionName)
     {
-        coinText.text = c.ToString();
+        Invoke(functionName,0);
     }
+    void RefreshCoin()
+    {
+        MissionItem item = new MissionItem();
+        item.itemName = "Coin";
+        Debug.Log("RefreshCoins");
+        StartCoroutine(AnimatePanel());
+        coinText.text = player.objectsInventory.HowManyItems(item).ToString();
+    }    
+    void RefreshFlower()
+    {
+        MissionItem item = new MissionItem();
+        item.itemName = "Flower";
+        flowerBox.SetActive(true);
+        Debug.Log("RefreshFlowers");
+        StartCoroutine(AnimatePanel());
+        flowerText.text = player.objectsInventory.HowManyItems(item).ToString();
+    }
+    void RefreshBait()
+    {
+        MissionItem item = new MissionItem();
+        item.itemName = "Bait";
+        baitBox.SetActive(true);
+        Debug.Log("RefreshBait");
+        StartCoroutine(AnimatePanel());
+        baitText.text = player.objectsInventory.HowManyItems(item).ToString();
+    }
+    void RefreshSeed()
+    {
+        MissionItem item = new MissionItem();
+        item.itemName = "Seed";
+        seedsBox.SetActive(true);
+        Debug.Log("RefreshSeeds");
+        StartCoroutine(AnimatePanel());
+        seedsText.text = player.objectsInventory.HowManyItems(item).ToString();
+    }
+    void RefreshCarrot()
+    {
+        MissionItem item = new MissionItem();
+        item.itemName = "Carrot";
+        carrotBox.SetActive(true);
+        Debug.Log("RefreshCarrots");
+        StartCoroutine(AnimatePanel());
+        carrotText.text = player.objectsInventory.HowManyItems(item).ToString();
+    }
+
+    IEnumerator AnimatePanel()
+    {
+        itemPanel.SetBool("isOpen", true);
+        yield return new WaitForSeconds(3);
+        itemPanel.SetBool("isOpen", false);
+    }
+    
     public void ResetUI()
     {
         coinText.text = "0";

@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour
             if (i.itemName == item.itemName)
             {
                 inventory.Remove(i);
+                UIManager.instance.Refresh("Refresh" + item.itemName);
                 return i;
             }
         }

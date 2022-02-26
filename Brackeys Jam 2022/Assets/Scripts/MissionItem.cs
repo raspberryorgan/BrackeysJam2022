@@ -5,7 +5,7 @@ using UnityEngine;
 public class MissionItem : Interactable
 {
     public string itemName;
-    
+
     public override void Interact(Player player)
     {
         player.AddToInventory(this);
