@@ -5,15 +5,26 @@ using UnityEngine;
 public class NPC : Interactable
 {
     public Mission mission;
+    Transform p;
+    public GameObject ui;
+    public GameObject alert;
     // Start is called before the first frame update
     void Start()
     {
+        p = FindObjectOfType<Player>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Vector2.Distance(transform.position,p.position) < 2)
+        {
+            ui.SetActive(true);
+        }
+        else
+        {
+            ui.SetActive(false);
+        }
     }
     public override void Interact(Player player)
     {
@@ -48,6 +59,7 @@ public class NPC : Interactable
             mission.state = MissionStates.Claimed;
             player.AddToInventory(mission.award);
             AudioManager.instance.Play("award");
+            alert.SetActive(false);
             return;
         }
         if (mission.state == MissionStates.Claimed)
