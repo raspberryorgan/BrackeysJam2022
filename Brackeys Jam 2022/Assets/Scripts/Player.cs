@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         onOpenInventory = () => { };
         onCloseInventory = () => { };
+        UIManager.instance.ResetUI();
     }
 
     void Update()
@@ -111,5 +112,9 @@ public class Player : MonoBehaviour
     public void AddToInventory(MissionItem item)
     {
         objectsInventory.AddItem(item);
+        if (item.itemName == "Coin")
+        {
+            UIManager.instance.RefreshCoin(objectsInventory.HowManyItems(item));
+        }
     }
 }

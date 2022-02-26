@@ -16,11 +16,6 @@ public class MissionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateCoinsUI(player.objectsInventory.HowManyItems(coinsType));
     }
 
-    void UpdateCoinsUI(float val)
-    {
-        coinsText.text = val+ "/5";
-    }
 }

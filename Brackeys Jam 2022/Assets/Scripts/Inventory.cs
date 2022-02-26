@@ -46,7 +46,7 @@ public class Inventory : MonoBehaviour
         return a >= cant;
     }
 
-    public float HowManyItems(MissionItem item)
+    public int HowManyItems(MissionItem item)
     {
         var a = 0;
         foreach (var i in inventory)

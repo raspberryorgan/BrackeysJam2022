@@ -19,13 +19,7 @@ public class Mission
             d.wasTalked = false;
         }
     }
-    public void Evaluate()
-    {
-        if (currentAmount >= requiredAmount)
-        {
-            state = MissionStates.Completed;
-        }
-    }
+    
 }
 public enum MissionType
 {
