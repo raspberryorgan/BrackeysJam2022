@@ -7,12 +7,16 @@ public class Cat : MissionItem
     public Transform initialPos;
     public Transform finalPos;
     public float travelTime;
+
+    Animator anim;
+    bool inDestination;
     float timer;
     SpriteRenderer sr;
 
     bool bellRang;
     public void Start()
     {
+        anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         sr.enabled = false;
     }
@@ -39,8 +43,14 @@ public class Cat : MissionItem
 
     void Appear()
     {
-        timer += Time.deltaTime;
-
+        if(timer < travelTime)
+        {
+            timer += Time.deltaTime;
+        }else if(!inDestination)
+        {
+            inDestination = true;
+            anim.SetBool("InDestination", true);
+        }
         transform.position = Vector3.Lerp(initialPos.position, finalPos.position, timer / travelTime);
 
     }
