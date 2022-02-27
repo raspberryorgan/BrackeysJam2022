@@ -2550,7 +2550,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Programmers: Belen Nava\t\n\t       @Belu123mm\n\t       Agustin Martinez\n\t      
     @Agezma\nArt by:  Belen Nava\n\t@Belu123mm\n\tAgustin Martinez\n\t@Agezma\nSounds
-    from FreeSounds.org"
+    from FreeSounds.org\nColor Pallette: https://lospec.com/palette-list/twilioquest-76"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3e746798aac3b37428aca140b8ded8b6, type: 2}
   m_sharedMaterial: {fileID: 2438091889356292739, guid: 3e746798aac3b37428aca140b8ded8b6, type: 2}
@@ -3245,7 +3245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11232862, y: 0.22373188}
   m_AnchorMax: {x: 0.3047762, y: 0.32626817}
-  m_AnchoredPosition: {x: -0.37387085, y: 0.22114563}
+  m_AnchoredPosition: {x: 636, y: 0.22114563}
   m_SizeDelta: {x: 2.8423767, y: -1.6746674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045344101
