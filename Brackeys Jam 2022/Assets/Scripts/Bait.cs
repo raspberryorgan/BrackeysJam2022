@@ -14,10 +14,12 @@ public class Bait : MissionItem
         {
             player.AddToInventory(this);
             gameObject.SetActive(false);
+            AudioManager.instance.Play("dig");
         }
         else
         {
             Debug.Log("WRONG PLACE");
+            AudioManager.instance.Play("negation");
             //Hacer feedback de q aca no hay nada
         }
     }

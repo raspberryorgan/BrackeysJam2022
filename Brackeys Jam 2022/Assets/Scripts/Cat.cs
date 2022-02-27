@@ -37,6 +37,7 @@ public class Cat : MissionItem
     public void CallCat()
     {
         Debug.Log("CALLING CAT");
+        AudioManager.instance.Play("meow");
         sr.enabled = true;
         bellRang = true;
     }

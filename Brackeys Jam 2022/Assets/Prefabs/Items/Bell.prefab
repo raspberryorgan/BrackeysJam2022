@@ -122,6 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cd57072649a7945b44105e4efbe70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: award
+  sound: bell
   isOnRightPos: 0
   cat: {fileID: 0}

@@ -56,6 +56,11 @@ public class NPC : Interactable
         if (mission.state == MissionStates.Completed)
         {
             FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[2]);
+            for (int i = 0; i < mission.requiredAmount; i++)
+            {
+                player.objectsInventory.RemoveItem(mission.item);
+                UIManager.instance.Refresh("Refresh" + mission.item.itemName);
+            }
             mission.state = MissionStates.Claimed;
             player.AddToInventory(mission.award);
             AudioManager.instance.Play("award");

@@ -51,11 +51,11 @@ public class AudioManager : MonoBehaviour {
             asource.pitch = s.pitch;
             asource.loop = s.loop;
             asource.Play();
-            //Debug.Log("Playing " + soundName);
+            Debug.Log("Playing " + soundName);
         }
         else
         {
-            //Debug.Log(soundName + " not found.");
+            Debug.Log(soundName + " not found.");
         }
     }
     public void PlayStep()

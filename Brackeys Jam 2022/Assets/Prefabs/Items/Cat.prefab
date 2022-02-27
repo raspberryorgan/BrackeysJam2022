@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5645f2b884dfc4a4ba600ea48b30430a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: 
+  sound: meow
   itemName: Cat
   initialPos: {fileID: 0}
   finalPos: {fileID: 0}
