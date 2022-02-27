@@ -27,6 +27,16 @@ public class MissionManager : MonoBehaviour
             timer.x++;
             timer.y = 0;
         }
+
+        if(timer.x >= 22)
+        {
+            Lose();
+        }
+    }
+
+    void Lose()
+    {
+
     }
 
 }
