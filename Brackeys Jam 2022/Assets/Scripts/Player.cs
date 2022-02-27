@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public GameObject memoryInventory;
     public Inventory objectsInventory;
 
+    public Animator anim;
+    SpriteRenderer sr;
     public float stepTime;
     private float soundTime;
 
@@ -29,7 +31,9 @@ public class Player : MonoBehaviour
     public void RemoveOnCloseInventory(Action callback) { onCloseInventory -= callback; }
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         onOpenInventory = () => { };
         onCloseInventory = () => { };
         UIManager.instance.ResetUI();
@@ -37,9 +41,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (isBusy) {
+        if (isBusy)
+        {
             rb.velocity = Vector2.zero;
-            return; }
+            return;
+        }
         Move();
         InteractPos();
 
@@ -97,6 +103,7 @@ public class Player : MonoBehaviour
         }
         else if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
         {
+            sr.flipX = Input.GetAxisRaw("Horizontal") < 0;
             rb.velocity = (Vector2.right * Input.GetAxisRaw("Horizontal")).normalized * speed;
             lastDir = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
             soundTime += Time.deltaTime;
@@ -107,6 +114,13 @@ public class Player : MonoBehaviour
             }
         }
         else rb.velocity = Vector2.zero;
+
+        anim.SetBool("IsMoving", rb.velocity.magnitude > 0.1f);
+
+        Debug.Log(lastDir);
+        anim.SetFloat("HorSpeed", lastDir.x);
+        anim.SetFloat("VertSpeed", lastDir.y);
+
     }
 
     public void AddToInventory(MissionItem item)
