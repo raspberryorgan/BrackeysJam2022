@@ -7,15 +7,26 @@ public class MissionManager : MonoBehaviour
     public Player player;
     public MissionItem coinsType;
     public Text coinsText;
-    // Start is called before the first frame update
+
+    public Vector2 timer;
+
     void Start()
     {
-        
+        timer = new Vector2(10, 0);
+    }
+    private void Update()
+    {
+        UpdateTime();
     }
 
-    // Update is called once per frame
-    void Update()
+    void UpdateTime()
     {
+        timer.y += Time.deltaTime;
+        if(timer.y >= 60)
+        {
+            timer.x++;
+            timer.y = 0;
+        }
     }
 
 }

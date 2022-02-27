@@ -22,6 +22,11 @@ public class UIManager : MonoBehaviour
     public GameObject carrotBox;
     public TMP_Text carrotText;
 
+    public TMP_Text hourText;
+
+    public MissionManager misionManager;
+
+
     public Player player;
 
     public void Awake()
@@ -36,9 +41,13 @@ public class UIManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+    private void Update()
+    {
+        RefreshHour();
+    }
     public void Refresh(string functionName)
     {
-        Invoke(functionName,0);
+        Invoke(functionName, 0);
     }
     void RefreshCoin()
     {
@@ -47,7 +56,7 @@ public class UIManager : MonoBehaviour
         Debug.Log("RefreshCoins");
         StartCoroutine(AnimatePanel());
         coinText.text = player.objectsInventory.HowManyItems(item).ToString();
-    }    
+    }
     void RefreshFlower()
     {
         MissionItem item = new MissionItem();
@@ -85,13 +94,17 @@ public class UIManager : MonoBehaviour
         carrotText.text = player.objectsInventory.HowManyItems(item).ToString();
     }
 
+    void RefreshHour()
+    {
+        hourText.text = (double)misionManager.timer.x + ":" + Mathf.FloorToInt(misionManager.timer.y).ToString("00");
+    }
     IEnumerator AnimatePanel()
     {
         itemPanel.SetBool("isOpen", true);
         yield return new WaitForSeconds(3);
         itemPanel.SetBool("isOpen", false);
     }
-    
+
     public void ResetUI()
     {
         coinText.text = "0";
