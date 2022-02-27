@@ -8,6 +8,7 @@ public class MissionManager : MonoBehaviour
     public MissionItem coinsType;
     public Text coinsText;
 
+    public bool isRuning;
     public Vector2 timer;
 
     void Start()
@@ -16,7 +17,8 @@ public class MissionManager : MonoBehaviour
     }
     private void Update()
     {
-        UpdateTime();
+        if(isRuning)
+            UpdateTime();
     }
 
     void UpdateTime()

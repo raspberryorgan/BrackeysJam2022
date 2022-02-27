@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     public GameObject keyBox;
 
     public TMP_Text hourText;
+    public GameObject[] toHide;
 
     public MissionManager misionManager;
 
@@ -57,7 +58,7 @@ public class UIManager : MonoBehaviour
         item.itemName = "Coin";
         Debug.Log("RefreshCoins");
         StartCoroutine(AnimatePanel());
-        coinText.text = player.objectsInventory.HowManyItems(item).ToString();
+        coinText.text = player.objectsInventory.HowManyItems(item).ToString() + "/5";
     }
     void RefreshFlower()
     {
@@ -99,6 +100,13 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("RefreshKey");
         keyBox.SetActive(true);
+    }
+    public void ShowMainMission()
+    {
+        foreach (var item in toHide)
+        {
+            item.SetActive(true);
+        }
     }
 
     void RefreshHour()
