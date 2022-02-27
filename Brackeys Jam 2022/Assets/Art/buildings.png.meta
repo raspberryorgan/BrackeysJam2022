@@ -35,6 +35,9 @@ TextureImporter:
   - first:
       213: 3247767813255465682
     second: buildings_10
+  - first:
+      213: 1775660474302345089
+    second: buildings_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -354,7 +357,7 @@ TextureImporter:
         width: 192
         height: 160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,6 +365,27 @@ TextureImporter:
       bones: []
       spriteID: 2da0a066e93621d20800000000000000
       internalID: 3247767813255465682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 128
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f2e742bc964a810800000000000000
+      internalID: 1775660474302345089
       vertices: []
       indices: 
       edges: []
