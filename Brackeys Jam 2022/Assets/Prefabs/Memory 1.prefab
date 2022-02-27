@@ -824,7 +824,6 @@ MonoBehaviour:
   collidersToTurnOn:
   - {fileID: 4751475691081124268}
   - {fileID: 5481593800092448350}
-  toTurnOff: []
 --- !u!1 &2330005336703104115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,7 +1744,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8822793669148735517
 CanvasRenderer:
@@ -1768,14 +1767,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8962264, g: 0.603237, b: 0.31706125, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 51b07bc366dac4f41870c6a4f6defe56, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1798,6 +1797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  canvasGroup: {fileID: 0}
   realMemory: {fileID: 8808961557128914738}
   checker: {fileID: 0}
   state: 0
