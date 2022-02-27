@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
     public GameObject carrotBox;
     public TMP_Text carrotText;
 
+    public GameObject keyBox;
+
     public TMP_Text hourText;
 
     public MissionManager misionManager;
@@ -92,6 +94,11 @@ public class UIManager : MonoBehaviour
         Debug.Log("RefreshCarrots");
         StartCoroutine(AnimatePanel());
         carrotText.text = player.objectsInventory.HowManyItems(item).ToString();
+    }
+    void RefreshKey()
+    {
+        Debug.Log("RefreshKey");
+        keyBox.SetActive(true);
     }
 
     void RefreshHour()
