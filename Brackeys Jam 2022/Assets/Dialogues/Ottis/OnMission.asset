@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Ottis
   sentences:
-  - text: I need some baits
+  - text: I need some <b>baits</b>. The <b>coast</b> was always full of them.
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   wasTalked: 0

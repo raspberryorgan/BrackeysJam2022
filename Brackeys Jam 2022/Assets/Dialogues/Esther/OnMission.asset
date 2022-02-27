@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   sentences:
-  - text: I would love to get some flowers
+  - text: I would love to get some <b>flowers</b>
     memory: {fileID: 0}
+    missionItem: {fileID: 0}
   wasTalked: 0

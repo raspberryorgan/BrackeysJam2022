@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Catlady
   sentences:
-  - text: "I miss my cat :\xB4("
+  - text: My <b>cat </b>used to play with the <b>bell</b> in the <b>fish shop</b>
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   wasTalked: 0

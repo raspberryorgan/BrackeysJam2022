@@ -13,7 +13,7 @@ public class InventoryRescale : MonoBehaviour
     {
         float screenSize = Screen.width * 0.9f;
 
-        group.cellSize = new Vector2(screenSize*0.8f  /8, screenSize*0.8f / 8);
+        group.cellSize = new Vector2(screenSize*0.8f  /16, screenSize*0.8f / 16);
         group.spacing = new Vector2(screenSize * 0.2f / 8, 0);
     }
 

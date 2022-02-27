@@ -14,34 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Clay
   sentences:
-  - text: 'Good morning. How are you feeling today? '
+  - text: Good morning. How are you feeling today? Can I help you with something?
     memory: {fileID: 0}
     missionItem: {fileID: 0}
-  - text: Oh! Good to hear! It seems that you are a little lost, Can I help you with
-      something?
-    memory: {fileID: 2484706400260382076, guid: 410ddb1f11dbb484a8ec5d791ef95397, type: 3}
-    missionItem: {fileID: 0}
-  - text: 'Mmmm a good place to visit? It''s complicated in this little town, but
-      there is a place that is worth the job. '
-    memory: {fileID: 0}
-    missionItem: {fileID: 0}
-  - text: It's outside the town, and in the sunset is a great time to visit. It's
-      the Lighthouse! A little old and away from here, but it's beautifull.
-    memory: {fileID: 0}
-    missionItem: {fileID: 0}
-  - text: 'Where is it? Well, it''s complicated to say, but I have a map that will
-      guide you there. Don''t worry you have plenty of time! '
-    memory: {fileID: 0}
-    missionItem: {fileID: 0}
-  - text: The Map? Oh, it's just five coins!
+  - text: So you want to go to the <b>lighthouse</b>? I can give you the key for
+      just 4 <b>coins</b>.
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   - text: Oh, you don't have any money? Don't worry, you can go around the town and
-      search for favors, and help the people in here. Everyone are really thankfull
-      and they will help you with the coins.
+      look for favors. People are really thankfull and they will help you with the
+      coins.
     memory: {fileID: 0}
     missionItem: {fileID: 0}
-  - text: I hope it works! And see you around!
+  - text: Get me the <b>coins</b> before 22:00 or it will be too late. Good luck!
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   wasTalked: 1

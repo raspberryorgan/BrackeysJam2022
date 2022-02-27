@@ -14,16 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Clay
   sentences:
-  - text: dialogo 3.0
-    memory: {fileID: 0}
-    missionItem: {fileID: 0}
-  - text: gbvbhtr
-    memory: {fileID: 0}
-    missionItem: {fileID: 0}
-  - text: fgjhtyuetuetyu
-    memory: {fileID: 0}
-    missionItem: {fileID: 0}
-  - text: rwrwerdfcvb
+  - text: Thanks for the coins. This is the <b>key</b> for the lighthouse. Go on!
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   wasTalked: 0

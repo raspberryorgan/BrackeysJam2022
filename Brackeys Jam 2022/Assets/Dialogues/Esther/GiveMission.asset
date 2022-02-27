@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Esther
   sentences:
-  - text: The other side of the river is full of flowers
+  - text: The other side of the river is full of <b>flowers</b>.
     memory: {fileID: 0}
     missionItem: {fileID: 0}
-  - text: I remember going there before the bridge broke down
+  - text: I remember going there before the <b>bridge</b> broke down. If you find
+      some <b>flowers</b>, please bring them to me.
     memory: {fileID: 4476071940247980138, guid: b5e196a15aff08b4daadb8208994d3d6, type: 3}
     missionItem: {fileID: 0}
   wasTalked: 1

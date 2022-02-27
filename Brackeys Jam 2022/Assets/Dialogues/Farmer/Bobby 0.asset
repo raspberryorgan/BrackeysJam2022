@@ -17,7 +17,7 @@ MonoBehaviour:
   - text: Howdy partner!
     memory: {fileID: 0}
     missionItem: {fileID: 0}
-  - text: 'I am sad u.u My farm got infected. '
+  - text: 'My farm got infected. '
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   - text: I remember growing so much vegetables in there

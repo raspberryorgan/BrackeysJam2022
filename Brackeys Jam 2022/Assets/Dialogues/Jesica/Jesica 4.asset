@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Jesica
   sentences:
-  - text: Come again later for dinner 7w7
+  - text: The dish was great!
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   wasTalked: 0

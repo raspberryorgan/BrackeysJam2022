@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Clay
   sentences:
-  - text: Did you have the five coins? No? Go and find some people to help!
+  - text: Did you get the four <b>coins</b>? Go find some people to help!
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   wasTalked: 0

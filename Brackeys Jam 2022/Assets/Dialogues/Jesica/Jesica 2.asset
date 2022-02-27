@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Jesica
   sentences:
-  - text: Did you find any use for those seeds?
+  - text: Did you find any use for those <b> seeds</b>?
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   wasTalked: 0

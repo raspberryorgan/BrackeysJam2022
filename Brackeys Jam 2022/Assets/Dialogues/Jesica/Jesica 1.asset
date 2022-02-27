@@ -14,14 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Jesica
   sentences:
-  - text: "I wanted to make my grandma\xB4s famous ratatouiile but I don\xB4t have
-      any carrots"
+  - text: "I wanted to make my grandma\xB4s famous recipe but I don\xB4t have any
+      carrots"
     memory: {fileID: 0}
     missionItem: {fileID: 0}
-  - text: "I only have this seeeds, but I can\xB4t do anything with them. "
+  - text: "I only have this <b>seeds</b>, but I can\xB4t do anything with them. I\xB4ll
+      give them to you, maybe you can figure out something"
     memory: {fileID: 0}
     missionItem: {fileID: 3904602523096919722, guid: c01860b10a4798f48927ad9c61e0a143, type: 3}
-  - text: "I\xB4ll give them to you, maybe you can figure out something"
-    memory: {fileID: 0}
-    missionItem: {fileID: 0}
   wasTalked: 1

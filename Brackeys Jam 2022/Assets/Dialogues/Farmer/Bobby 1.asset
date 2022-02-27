@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Bobby 1
   m_EditorClassIdentifier: 
   npcName: Bobby
-  sentences: []
+  sentences:
+  - text: I should have taken care of my farm.
+    memory: {fileID: 0}
+    missionItem: {fileID: 0}
   wasTalked: 0

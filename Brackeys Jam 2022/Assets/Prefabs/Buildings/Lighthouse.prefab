@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 2531938246594199322}
   - component: {fileID: 2531938246594199301}
   - component: {fileID: 2531938246594199300}
-  m_Layer: 0
+  - component: {fileID: 9073034487069214918}
+  - component: {fileID: 1599702529500299305}
+  m_Layer: 7
   m_Name: Lighthouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,6 +99,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posToCheck: {fileID: 2531938248065899621}
+--- !u!61 &9073034487069214918
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531938246594199303}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.45026398, y: -4.664448}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 11.0625}
+    newSize: {x: 4, y: 11.0625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4232903, y: 1.7336044}
+  m_EdgeRadius: 0
+--- !u!114 &1599702529500299305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531938246594199303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f6001fa935f614fbf622b87f38e021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 
 --- !u!1 &2531938248065899621
 GameObject:
   m_ObjectHideFlags: 0

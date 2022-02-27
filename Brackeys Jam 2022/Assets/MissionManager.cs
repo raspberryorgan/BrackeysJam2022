@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class MissionManager : MonoBehaviour
 {
     public Player player;
     public MissionItem coinsType;
-    public Text coinsText;
 
     public bool isRuning;
     public Vector2 timer;
@@ -17,20 +17,19 @@ public class MissionManager : MonoBehaviour
     }
     private void Update()
     {
-        if(isRuning)
-            UpdateTime();
+        UpdateTime();
     }
 
     void UpdateTime()
     {
         timer.y += Time.deltaTime;
-        if(timer.y >= 60)
+        if (timer.y >= 60)
         {
             timer.x++;
             timer.y = 0;
         }
 
-        if(timer.x >= 22)
+        if (timer.x >= 22)
         {
             Lose();
         }
@@ -38,7 +37,7 @@ public class MissionManager : MonoBehaviour
 
     void Lose()
     {
-
+        SceneManager.LoadScene("Defeat");   
     }
 
 }

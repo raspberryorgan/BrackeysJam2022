@@ -43,6 +43,8 @@ public class UIManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        UIManager.instance.Refresh("RefreshCoin");
     }
     private void Update()
     {
@@ -57,8 +59,8 @@ public class UIManager : MonoBehaviour
         MissionItem item = new MissionItem();
         item.itemName = "Coin";
         Debug.Log("RefreshCoins");
-        StartCoroutine(AnimatePanel());
-        coinText.text = player.objectsInventory.HowManyItems(item).ToString() + "/5";
+        //StartCoroutine(AnimatePanel());
+        coinText.text = player.objectsInventory.HowManyItems(item).ToString() + "/4";
     }
     void RefreshFlower()
     {

@@ -15,7 +15,7 @@ MonoBehaviour:
   npcName: Jesica
   sentences:
   - text: Wow, you really grew those carrots! Thanks a lot. I am going to make a
-      great dish with these, Let me just pay you for helping.
+      great dish with these. Let me just pay you for helping me.
     memory: {fileID: 0}
     missionItem: {fileID: 0}
   wasTalked: 0

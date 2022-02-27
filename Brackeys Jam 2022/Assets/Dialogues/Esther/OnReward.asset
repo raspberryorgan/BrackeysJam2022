@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   sentences:
-  - text: 'Oh my! You are so sweet, thanks for these flowers, have this coin as a
-      sign of grateful
-
-      ness'
+  - text: Oh my! You are so sweet, thanks for these flowers, have this coin as a
+      sign of gratefulness
     memory: {fileID: 0}
+    missionItem: {fileID: 0}
   wasTalked: 0
