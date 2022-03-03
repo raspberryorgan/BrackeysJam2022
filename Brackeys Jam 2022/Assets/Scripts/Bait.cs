@@ -5,15 +5,16 @@ using UnityEngine;
 public class Bait : MissionItem
 {
     public bool isInRightPlace;
+    public ParticleSystem particles;
 
     
     public override void Interact(Player player)
     {
         AudioManager.instance.Play(sound);
+        particles.Play();
         if (isInRightPlace)
         {
-            player.AddToInventory(this);
-            gameObject.SetActive(false);
+            StartCoroutine(ParticlesPlayer(player));
             AudioManager.instance.Play("dig");
         }
         else
@@ -22,5 +23,13 @@ public class Bait : MissionItem
             AudioManager.instance.Play("negation");
             //Hacer feedback de q aca no hay nada
         }
+    }
+
+
+    IEnumerator ParticlesPlayer(Player player)
+    {
+        yield return new WaitForSeconds(0.6f);
+        gameObject.SetActive(false);
+        player.AddToInventory(this);
     }
 }
