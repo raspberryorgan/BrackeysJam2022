@@ -6,6 +6,14 @@ public class MissionItem : Interactable
 {
     public string itemName;
 
+    public override void ActivateUI()
+    {
+    }
+
+    public override void DeactivateUI()
+    {       
+    }
+
     public override void Interact(Player player)
     {
         player.AddToInventory(this);

@@ -22,7 +22,6 @@ public class MemorySlot : MonoBehaviour, IDropHandler
         {
             if(item.state == DragState.Selected)
             {
-
                 RectTransform currRect = item.GetComponent<RectTransform>();
                 item.SetParent(transform);
                 currRect.anchorMin = Vector2.zero;

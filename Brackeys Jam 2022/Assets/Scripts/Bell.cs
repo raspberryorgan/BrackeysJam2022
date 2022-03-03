@@ -21,5 +21,11 @@ public class Bell : Interactable
         }
     }
 
+    public override void ActivateUI()
+    {
+    }
 
+    public override void DeactivateUI()
+    {
+    }
 }

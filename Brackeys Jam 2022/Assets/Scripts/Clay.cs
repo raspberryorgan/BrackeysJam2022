@@ -76,4 +76,11 @@ public class Clay : Interactable
 
     }
 
+    public override void ActivateUI()
+    {
+    }
+
+    public override void DeactivateUI()
+    {
+    }
 }

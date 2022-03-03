@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4824321249049999087}
   - component: {fileID: 4824321249049999086}
   - component: {fileID: 4824321249049998993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4824321250629875644}
   - component: {fileID: 3336802989778152584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,19 +12,19 @@ public class NPC : Interactable
     void Start()
     {
         p = FindObjectOfType<Player>().transform;
+        DeactivateUI();
+    }
+    private void Update()
+    {
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void ActivateUI()
     {
-        if(Vector2.Distance(transform.position,p.position) < 2)
-        {
-            ui.SetActive(true);
-        }
-        else
-        {
-            ui.SetActive(false);
-        }
+        ui.SetActive(true);
+    }
+    public override void DeactivateUI()
+    {
+        ui.SetActive(false);
     }
     public override void Interact(Player player)
     {

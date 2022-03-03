@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
     {
         MissionItem item = new MissionItem();
         item.itemName = "Coin";
-        Debug.Log("RefreshCoins");
+        //Debug.Log("RefreshCoins");
         //StartCoroutine(AnimatePanel());
         coinText.text = player.objectsInventory.HowManyItems(item).ToString() + "/4";
     }
@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
         MissionItem item = new MissionItem();
         item.itemName = "Flower";
         flowerBox.SetActive(true);
-        Debug.Log("RefreshFlowers");
+        //Debug.Log("RefreshFlowers");
         StartCoroutine(AnimatePanel());
         flowerText.text = player.objectsInventory.HowManyItems(item).ToString();
     }
@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
         MissionItem item = new MissionItem();
         item.itemName = "Bait";
         baitBox.SetActive(true);
-        Debug.Log("RefreshBait");
+        //Debug.Log("RefreshBait");
         StartCoroutine(AnimatePanel());
         baitText.text = player.objectsInventory.HowManyItems(item).ToString();
     }
@@ -85,7 +85,7 @@ public class UIManager : MonoBehaviour
         MissionItem item = new MissionItem();
         item.itemName = "Seed";
         seedsBox.SetActive(true);
-        Debug.Log("RefreshSeeds");
+        //Debug.Log("RefreshSeeds");
         StartCoroutine(AnimatePanel());
         seedsText.text = player.objectsInventory.HowManyItems(item).ToString();
     }
@@ -94,13 +94,13 @@ public class UIManager : MonoBehaviour
         MissionItem item = new MissionItem();
         item.itemName = "Carrot";
         carrotBox.SetActive(true);
-        Debug.Log("RefreshCarrots");
+        //Debug.Log("RefreshCarrots");
         StartCoroutine(AnimatePanel());
         carrotText.text = player.objectsInventory.HowManyItems(item).ToString();
     }
     void RefreshKey()
     {
-        Debug.Log("RefreshKey");
+        //Debug.Log("RefreshKey");
         keyBox.SetActive(true);
     }
     public void ShowMainMission()

@@ -47,4 +47,12 @@ public class Plot : Interactable
 
         Debug.Log("SEMILLA PLANTADA");
     }
+
+    public override void ActivateUI()
+    {
+    }
+
+    public override void DeactivateUI()
+    {
+    }
 }

@@ -72,24 +72,53 @@ public class Player : MonoBehaviour
             onOpenInventory();
         memoryInventory.SetActive(!memoryInventory.activeSelf);
     }
+
     void TryInteract()
     {
-        var aux = Physics2D.CircleCastAll(interactPos.position, .2f, Vector2.zero, interactableMask);
-        foreach (var item in aux)
+        var item = Physics2D.CircleCast(interactPos.position, .2f, Vector2.zero, interactableMask);
+
+        if (item.transform != null)
         {
-            if (item.transform != null)
+            var interactable = item.transform.GetComponent<Interactable>();
+            if (interactable != null)
             {
-                var interactable = item.transform.GetComponent<Interactable>();
-                if (interactable != null)
-                {
-                    interactable.Interact(this);
-                }
+                interactable.Interact(this);
             }
         }
+
     }
+
+    Interactable lastInteractable;
     void InteractPos()
     {
         interactPos.position = transform.position + lastDir;
+        if(lastInteractable!=null)
+            Debug.Log(lastInteractable.gameObject.name);
+
+        var item = Physics2D.CircleCast(interactPos.position, .2f, Vector2.zero, interactableMask);
+
+        if (item.transform != null)
+        {
+            var interactable = item.transform.GetComponent<Interactable>();
+            if (interactable != null && interactable != lastInteractable)
+            {
+                Debug.Log(interactable.gameObject.name);
+                lastInteractable = interactable;
+                interactable.ActivateUI();
+            }
+            else if(interactable != lastInteractable )
+            {
+                lastInteractable.DeactivateUI();
+                lastInteractable = null;
+            }
+        }
+        else if(lastInteractable != null)
+        {
+            lastInteractable.DeactivateUI();
+            lastInteractable = null;
+        }
+
+
     }
 
     void Move()
@@ -121,10 +150,8 @@ public class Player : MonoBehaviour
 
         anim.SetBool("IsMoving", rb.velocity.magnitude > 0.1f);
 
-        Debug.Log(lastDir);
         anim.SetFloat("HorSpeed", lastDir.x);
         anim.SetFloat("VertSpeed", lastDir.y);
-
     }
 
     public void AddToInventory(MissionItem item)

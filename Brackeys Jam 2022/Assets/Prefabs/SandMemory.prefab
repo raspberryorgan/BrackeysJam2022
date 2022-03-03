@@ -614,7 +614,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5001
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1300,7 +1300,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5000
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1469,7 +1469,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 85913848610787778, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5002
       objectReference: {fileID: 0}
     - target: {fileID: 573276815301748767, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: m_RootOrder
@@ -1529,7 +1529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240301153445189416, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: sound
-      value: 
+      value: dig
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
@@ -1552,7 +1552,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 85913848610787778, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5002
       objectReference: {fileID: 0}
     - target: {fileID: 573276815301748767, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: m_RootOrder
@@ -1612,7 +1612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240301153445189416, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: sound
-      value: 
+      value: dig
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
@@ -1635,7 +1635,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 85913848610787778, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5002
       objectReference: {fileID: 0}
     - target: {fileID: 573276815301748767, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: m_RootOrder
@@ -1695,7 +1695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240301153445189416, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: sound
-      value: 
+      value: dig
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
@@ -1718,7 +1718,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 85913848610787778, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5002
       objectReference: {fileID: 0}
     - target: {fileID: 573276815301748767, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: m_RootOrder
@@ -1778,7 +1778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240301153445189416, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}
       propertyPath: sound
-      value: 
+      value: dig
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 420e2fdf49122d743b754b63e45562f4, type: 3}

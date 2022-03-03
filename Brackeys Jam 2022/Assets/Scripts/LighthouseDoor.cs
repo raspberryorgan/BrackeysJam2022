@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LighthouseDoor : Interactable
 {
+    public override void ActivateUI()
+    {
+    }
+
+    public override void DeactivateUI()
+    {
+    }
+
     public override void Interact(Player player)
     {
         MissionItem item = new MissionItem();
