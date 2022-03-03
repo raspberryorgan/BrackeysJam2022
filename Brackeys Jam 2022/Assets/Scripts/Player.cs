@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
@@ -76,7 +77,6 @@ public class Player : MonoBehaviour
     void TryInteract()
     {
         var item = Physics2D.CircleCast(interactPos.position, .2f, Vector2.zero, interactableMask);
-
         if (item.transform != null)
         {
             var interactable = item.transform.GetComponent<Interactable>();
@@ -85,40 +85,37 @@ public class Player : MonoBehaviour
                 interactable.Interact(this);
             }
         }
-
     }
 
     Interactable lastInteractable;
     void InteractPos()
     {
         interactPos.position = transform.position + lastDir;
-        if(lastInteractable!=null)
+        if (lastInteractable != null)
             Debug.Log(lastInteractable.gameObject.name);
+        else
+            Debug.Log(lastInteractable);
 
         var item = Physics2D.CircleCast(interactPos.position, .2f, Vector2.zero, interactableMask);
-
         if (item.transform != null)
         {
             var interactable = item.transform.GetComponent<Interactable>();
             if (interactable != null && interactable != lastInteractable)
             {
-                Debug.Log(interactable.gameObject.name);
                 lastInteractable = interactable;
                 interactable.ActivateUI();
             }
-            else if(interactable != lastInteractable )
+            else if (interactable != lastInteractable)
             {
                 lastInteractable.DeactivateUI();
                 lastInteractable = null;
             }
         }
-        else if(lastInteractable != null)
+        else if (lastInteractable != null)
         {
             lastInteractable.DeactivateUI();
             lastInteractable = null;
         }
-
-
     }
 
     void Move()
@@ -154,9 +151,15 @@ public class Player : MonoBehaviour
         anim.SetFloat("VertSpeed", lastDir.y);
     }
 
+
     public void AddToInventory(MissionItem item)
     {
         objectsInventory.AddItem(item);
         UIManager.instance.Refresh("Refresh" + item.itemName);
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(interactPos.position, 0.2f);
     }
 }

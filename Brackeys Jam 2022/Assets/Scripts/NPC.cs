@@ -8,9 +8,16 @@ public class NPC : Interactable
     Transform p;
     public GameObject ui;
     public GameObject alert;
+    Collider2D myCol;
     // Start is called before the first frame update
     void Start()
     {
+        myCol = GetComponent<Collider2D>();
+        if (myCol)
+        {
+            myCol.isTrigger = false;
+            myCol.isTrigger = true;
+        }
         p = FindObjectOfType<Player>().transform;
         DeactivateUI();
     }
