@@ -22,9 +22,16 @@ public class MemorySlot : MonoBehaviour, IDropHandler
         {
             if(item.state == DragState.Selected)
             {
+
+                RectTransform currRect = item.GetComponent<RectTransform>();
                 item.SetParent(transform);
-                item.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
-              
+                currRect.anchorMin = Vector2.zero;
+                currRect.anchorMax = Vector2.one;
+                currRect.anchoredPosition = Vector3.zero;
+                currRect.sizeDelta = transform.GetComponent<RectTransform>().sizeDelta;
+
+                currRect.offsetMin = Vector2.zero;
+                currRect.offsetMax = Vector2.zero;
             }
         }
 

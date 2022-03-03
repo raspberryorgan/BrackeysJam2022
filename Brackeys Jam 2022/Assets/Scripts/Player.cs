@@ -54,14 +54,18 @@ public class Player : MonoBehaviour
         {
             TryInteract();
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            DreamInventoryChange();
+        }
         if (Input.GetKeyDown(KeyCode.I))
         {
-            InventoryChange();
+            UIManager.instance.OpenCloseInventory();
         }
     }
 
 
-    void InventoryChange()
+    void DreamInventoryChange()
     {
         if (memoryInventory.activeSelf) onCloseInventory();
         else

@@ -115,11 +115,20 @@ public class UIManager : MonoBehaviour
     {
         hourText.text = (double)misionManager.timer.x + ":" + Mathf.FloorToInt(misionManager.timer.y).ToString("00");
     }
+
+    bool inventoryState = false;
+    public void OpenCloseInventory()
+    {
+        inventoryState = !inventoryState;
+        itemPanel.SetBool("isOpen", inventoryState);
+    }
     IEnumerator AnimatePanel()
     {
-        itemPanel.SetBool("isOpen", true);
+        inventoryState = true;
+        itemPanel.SetBool("isOpen", inventoryState);
         yield return new WaitForSeconds(3);
-        itemPanel.SetBool("isOpen", false);
+        inventoryState = false;
+        itemPanel.SetBool("isOpen", inventoryState);
     }
 
     public void ResetUI()
