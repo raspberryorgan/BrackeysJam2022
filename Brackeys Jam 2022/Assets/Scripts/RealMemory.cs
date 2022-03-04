@@ -41,6 +41,8 @@ public class RealMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
         if (state == MemoryState.PlacedInEditMode && Input.GetMouseButtonDown(0))
         {
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+            if(targetObject)
+                Debug.Log(targetObject.gameObject.name);
 
             if (targetObject == GetComponent<Collider2D>())
             {

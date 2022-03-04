@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
 
     private Player player;
 
+    bool isTyping;
+
     [Header("PA INICIALIZAR MEMORIES")]
     [SerializeField] MouseChecker checker;
 
@@ -27,6 +29,14 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<Sentence>();
         player = FindObjectOfType<Player>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && !isTyping)
+        {
+            DisplayNextSentence();
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -91,12 +101,14 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
+        isTyping = true;
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(0.02f);
         }
+        isTyping = false;
     }
 
     void EndDialogue()

@@ -23,6 +23,7 @@ public class Cat : MissionItem
     public override void Interact(Player player)
     {
         player.AddToInventory(this);
+        sr.enabled = false;
         gameObject.SetActive(false);
     }
 
@@ -32,22 +33,25 @@ public class Cat : MissionItem
         {
             Appear();
         }
-        
     }
     public void CallCat()
     {
-        Debug.Log("CALLING CAT");
-        AudioManager.instance.Play("meow");
         sr.enabled = true;
         bellRang = true;
+        if (gameObject.activeSelf)
+        {
+            Debug.Log("CALLING CAT");
+            AudioManager.instance.Play("meow");
+        }
     }
 
     void Appear()
     {
-        if(timer < travelTime)
+        if (timer < travelTime)
         {
             timer += Time.deltaTime;
-        }else if(!inDestination)
+        }
+        else if (!inDestination)
         {
             inDestination = true;
             anim.SetBool("InDestination", true);

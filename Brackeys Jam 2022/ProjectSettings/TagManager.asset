@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Player
   - Interactable
-  - River
+  - Block
   - MemoryBlock
   - MemoryTrigger
   - SandRightLocation

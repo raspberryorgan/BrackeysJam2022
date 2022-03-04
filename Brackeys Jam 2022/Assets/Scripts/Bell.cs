@@ -8,15 +8,14 @@ public class Bell : Interactable
     public Cat cat;
     void Start()
     {
-        
+
     }
 
     public override void Interact(Player player)
     {
+        AudioManager.instance.Play(sound);
         if (isOnRightPos && cat)
         {
-            AudioManager.instance.Play(sound);
-
             cat.CallCat();
         }
     }
