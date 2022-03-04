@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77681f972c995a440b01a3c9bd199772, type: 3}
+  m_Name: GiveMission
+  m_EditorClassIdentifier: 
+  npcName: Ottis
+  sentences:
+  - text: I forgot my <b>baits</b> at home!
+    memory: {fileID: 0}
+    missionItem: {fileID: 0}
+  - text: I used to go to the <b>coast</b> with my dad and collect <b>baits</b> from
+      the sand.
+    memory: {fileID: 4476071940247980138, guid: 16f0079869fb2684a93087366ab87a60, type: 3}
+    missionItem: {fileID: 0}
+  wasTalked: 1
