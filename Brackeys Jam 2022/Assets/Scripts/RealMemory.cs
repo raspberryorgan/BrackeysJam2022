@@ -42,7 +42,7 @@ public class RealMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
         {
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
             if(targetObject)
-                Debug.Log(targetObject.gameObject.name);
+                    Debug.Log(targetObject.gameObject.name);
 
             if (targetObject == GetComponent<Collider2D>())
             {
@@ -57,7 +57,7 @@ public class RealMemory : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
 
         if (state == MemoryState.Selected)
         {
-            transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+            transform.position = new Vector3(Mathf.RoundToInt(mousePosition.x), Mathf.RoundToInt(mousePosition.y), transform.position.z);
             //targetObject.transform.position += new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0); 
 
             //draggableMemory.transform.position = cam.WorldToScreenPoint(transform.position);

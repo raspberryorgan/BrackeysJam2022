@@ -11,7 +11,6 @@ public class Cat : MissionItem
     Animator anim;
     bool inDestination;
     float timer;
-    SpriteRenderer sr;
 
     bool bellRang;
     public void Start()

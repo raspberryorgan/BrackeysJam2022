@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+            "key": "play",
+            "value": "Jugar"
+        },
+        {
+            "key": "Settings",
+            "value": "Configuración"
+        },
+        {
+            "key": "Credits",
+            "value": "Créditos"
+        } {
+            "key": "Exit",
+            "value": "Salir"
+        }
+    ]
+}

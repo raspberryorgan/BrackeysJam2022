@@ -4,22 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Carrot : MissionItem
-{
+{   
     public float growTime;
-
     public bool harvestReady;
     float growtimer = 0;
     public Sprite[] sprites;
-    SpriteRenderer sr;
     public Image bg;
     public Image fillAmount;
     public string negationSound;
     [HideInInspector] public Plot plot;
-    void Start()
-    {
-        sr = GetComponent<SpriteRenderer>();
-    }
-
+  
     // Update is called once per frame
     void Update()
     {

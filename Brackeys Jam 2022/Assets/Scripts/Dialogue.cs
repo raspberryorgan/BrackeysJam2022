@@ -12,4 +12,6 @@ public class Dialogue : ScriptableObject
 
 	public bool wasTalked;
 
+	public bool isMission;
+
 }

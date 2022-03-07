@@ -6,8 +6,8 @@ public class Bait : MissionItem
 {
     public bool isInRightPlace;
     public ParticleSystem particles;
+ 
 
-    
     public override void Interact(Player player)
     {
         AudioManager.instance.Play(sound);

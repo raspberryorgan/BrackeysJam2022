@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "key": "play",
+            "value": "Play"
+        },
+        {
+            "key": "settings",
+            "value": "Settings"
+        },
+        {
+            "key": "credits",
+            "value": "Credits"
+        },
+	{
+            "key": "exit",
+            "value": "Exit"
+        }
+    ]
+}

@@ -100,15 +100,15 @@ public class Player : MonoBehaviour
         if (item.transform != null)
         {
             var interactable = item.transform.GetComponent<Interactable>();
-            if (interactable != null && interactable != lastInteractable)
-            {
-                lastInteractable = interactable;
-                interactable.ActivateUI();
-            }
-            else if (interactable != lastInteractable)
+            if (interactable != lastInteractable && lastInteractable != null)
             {
                 lastInteractable.DeactivateUI();
                 lastInteractable = null;
+            }
+            else if (interactable != null && interactable != lastInteractable)
+            {
+                lastInteractable = interactable;
+                interactable.ActivateUI();
             }
         }
         else if (lastInteractable != null)

@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NPC : Interactable
 {
-    public Mission mission;
     Transform p;
     public GameObject ui;
-    public GameObject alert;
+    public TMP_Text alert;
     Collider2D myCol;
-    // Start is called before the first frame update
+
+    public Dialogue[] dialogues;
+    int curDialog = 0;
+
     void Start()
     {
         myCol = GetComponent<Collider2D>();
@@ -20,11 +23,9 @@ public class NPC : Interactable
         }
         p = FindObjectOfType<Player>().transform;
         DeactivateUI();
+        alert.text = "?";
     }
-    private void Update()
-    {
-    }
-
+   
     public override void ActivateUI()
     {
         ui.SetActive(true);
@@ -36,49 +37,10 @@ public class NPC : Interactable
     public override void Interact(Player player)
     {
         AudioManager.instance.Play(sound);
-        if (mission.state == MissionStates.NotActivated)
-        {
-            mission.Init();
-            FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[0]);
-            mission.dialogues[0].wasTalked = true;
-            mission.state = MissionStates.InProgress;
-            return;
-        }
-        if (mission.state == MissionStates.InProgress)
-        {
-            //Cosas de cambiar la mision a completed
-            if (player.objectsInventory.ContainsXItems(mission.item, mission.requiredAmount))
-            {
-                mission.state = MissionStates.Completed;
-            }
-            else
-            {
-
-                FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[1]);
-                return;
-            }
-
-        }
-        
-        if (mission.state == MissionStates.Completed)
-        {
-            FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[2]);
-            for (int i = 0; i < mission.requiredAmount; i++)
-            {
-                player.objectsInventory.RemoveItem(mission.item);
-                UIManager.instance.Refresh("Refresh" + mission.item.itemName);
-            }
-            mission.state = MissionStates.Claimed;
-            player.AddToInventory(mission.award);
-            AudioManager.instance.Play("award");
-            alert.SetActive(false);
-            return;
-        }
-        if (mission.state == MissionStates.Claimed)
-        {
-            FindObjectOfType<DialogueManager>().StartDialogue(mission.dialogues[3]);
-            return;
-        }
-        
+      
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogues[curDialog]);
+        curDialog = Mathf.Clamp(curDialog + 1, 0, dialogues.Length-1);
+        Debug.Log(curDialog);
+        return;
     }
 }

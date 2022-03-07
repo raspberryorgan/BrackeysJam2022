@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "key": "play",
+            "value": "Jugar"
+        },
+        {
+            "key": "settings",
+            "value": "Configuración"
+        },
+        {
+            "key": "credits",
+            "value": "Créditos"
+        },
+	{
+            "key": "exit",
+            "value": "Salir"
+        },
+	{
+            "key": "back",
+            "value": "Atras"
+        },
+	{
+            "key": "spanish",
+            "value": "Español"
+        },
+	{
+            "key": "english",
+            "value": "English"
+        }
+    ]
+}
